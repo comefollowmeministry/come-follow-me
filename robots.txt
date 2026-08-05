@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://YOUR-WEBSITE-ADDRESS/sitemap.xml
+Sitemap: https://comefollowmeministry.github.io/come-follow-me/sitemap.xml
