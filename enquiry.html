@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Send a prayer request, vocation enquiry, formation question, pastoral enquiry, or ministry message to Come, Follow Me."
+    >
+
+    <title>Enquiries | Come, Follow Me</title>
+
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="logo/Cross.jpg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header id="top">
+
+        <div class="hero">
+
+            <img
+                src="logo/Cross.jpg"
+                class="logo"
+                alt="Cross symbol"
+            >
+
+            <h1>Enquiries and Prayer Requests</h1>
+
+            <p class="subtitle">
+                Contact the ministry for prayer, vocation,
+                formation, pastoral, or Catholic faith enquiries.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav aria-label="Enquiry page navigation">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="prayer-center.html">
+            Prayer Center
+        </a>
+
+        <a href="vocation.html">
+            Vocation
+        </a>
+
+        <a href="#form">
+            Enquiry Form
+        </a>
+
+        <a href="#contacts">
+            Direct Contacts
+        </a>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- ================= PURPOSE ================= -->
+
+        <section>
+
+            <h2>How May We Assist You?</h2>
+
+            <p class="page-introduction">
+                You may use this page for genuine prayer requests,
+                vocation enquiries, questions about Catholic faith,
+                formation matters, pastoral enquiries, or feedback
+                concerning this ministry website.
+            </p>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <h3>Prayer Request</h3>
+
+                    <p>
+                        Submit an intention for yourself, your family,
+                        a sick person, the faithful departed,
+                        or another special need.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Vocation Enquiry</h3>
+
+                    <p>
+                        Ask for guidance concerning priesthood,
+                        religious life, marriage, or Christian service.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Formation Enquiry</h3>
+
+                    <p>
+                        Ask about prayer, spiritual development,
+                        Scripture, Catholic teaching, or formation.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Website Feedback</h3>
+
+                    <p>
+                        Report a broken link, missing prayer,
+                        incorrect information, or technical problem.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ENQUIRY FORM ================= -->
+
+        <section id="form">
+
+            <h2>Send an Enquiry</h2>
+
+            <p>
+                Complete all required fields. Please do not include
+                passwords, bank information, identification documents,
+                or other highly sensitive personal information.
+            </p>
+
+            <!--
+                IMPORTANT:
+                Replace YOUR_FORM_ID below with the endpoint supplied
+                by Formspree after creating and verifying your form.
+            -->
+
+            <form
+                https://formspree.io/f/xzeppzzr
+                method="POST"
+            >
+
+                <label for="full-name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="full-name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                    required
+                >
+
+
+                <label for="phone">
+                    Telephone or WhatsApp Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Example: +675 7000 0000"
+                    autocomplete="tel"
+                >
+
+
+                <label for="enquiry-type">
+                    Type of Enquiry
+                </label>
+
+                <select
+                    id="enquiry-type"
+                    name="enquiry_type"
+                    required
+                >
+
+                    <option value="">
+                        Select an enquiry type
+                    </option>
+
+                    <option value="Prayer Request">
+                        Prayer Request
+                    </option>
+
+                    <option value="Vocation Enquiry">
+                        Vocation Enquiry
+                    </option>
+
+                    <option value="Formation Enquiry">
+                        Formation Enquiry
+                    </option>
+
+                    <option value="Catholic Faith Question">
+                        Catholic Faith Question
+                    </option>
+
+                    <option value="Pastoral Enquiry">
+                        Pastoral Enquiry
+                    </option>
+
+                    <option value="Website Feedback">
+                        Website Feedback
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Brief subject of your enquiry"
+                    required
+                >
+
+
+                <label for="message">
+                    Your Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="8"
+                    placeholder="Write your enquiry or prayer request here"
+                    required
+                ></textarea>
+
+
+                <label class="consent-label">
+
+                    <input
+                        type="checkbox"
+                        name="consent"
+                        value="Yes"
+                        required
+                    >
+
+                    I confirm that this is a genuine enquiry and
+                    that the information supplied may be used to
+                    respond to my message.
+
+                </label>
+
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Come, Follow Me Website Enquiry"
+                >
+
+
+                <button type="submit">
+                    Send Enquiry
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= DIRECT CONTACTS ================= -->
+
+        <section id="contacts">
+
+            <h2>Direct Contact Options</h2>
+
+            <div class="cards">
+
+
+                <article class="card">
+
+                    <h3>Ministry Telephone</h3>
+
+                    <p>
+                        <a href="tel:+67573225566">
+                            +675 7322 5566
+                        </a>
+                    </p>
+
+                    <a
+                        href="tel:+67573225566"
+                        class="hero-button"
+                    >
+                        Call Ministry Contact
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Ministry WhatsApp</h3>
+
+                    <p>
+                        Send a direct WhatsApp message.
+                    </p>
+
+                    <a
+                        href="https://wa.me/67573225566"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open WhatsApp
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Ministry Email</h3>
+
+                    <p>
+                        <a href="mailto:okolicosmasco@gmail.com">
+                            okolicosmasco@gmail.com
+                        </a>
+                    </p>
+
+                    <a
+                        href="mailto:okolicosmasco@gmail.com"
+                        class="hero-button"
+                    >
+                        Send Email
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Diocesan Vocation Director</h3>
+
+                    <p>
+                        <strong>Rev. Fr. Joseph Tuan</strong>
+                    </p>
+
+                    <p>
+                        <a href="tel:+67579203385">
+                            +675 7920 3385
+                        </a>
+                    </p>
+
+                    <a
+                        href="tel:+67579203385"
+                        class="hero-button"
+                    >
+                        Call Vocation Director
+                    </a>
+
+                    <a
+                        href="https://wa.me/67579203385"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        WhatsApp Vocation Director
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>Come, Follow Me</h3>
+
+        <p>
+            A Catholic ministry dedicated to faith, formation,
+            prayer, vocation, and service.
+        </p>
+
+        <div class="social-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="prayer-center.html">
+                Prayer Center
+            </a>
+
+            <a href="vocation.html">
+                Vocation
+            </a>
+
+            <a href="#top">
+                Top
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Okoli Cosmas Odinaka. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>

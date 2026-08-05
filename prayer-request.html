@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Submit a Catholic prayer request for healing, family, vocations, thanksgiving, peace, the faithful departed, or another special intention."
+    >
+
+    <title>Prayer Requests | Come, Follow Me</title>
+
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="Logo/Cross.jpg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header id="top">
+
+        <div class="hero">
+
+            <img
+                src="Logo/Cross.jpg"
+                alt="Cross symbol of the Come, Follow Me Catholic ministry"
+                class="logo"
+            >
+
+            <h1>Prayer Requests</h1>
+
+            <p class="verse">
+                “Ask, and it will be given to you.”
+            </p>
+
+            <p class="subtitle">
+                Matthew 7:7
+            </p>
+
+            <p class="subtitle">
+                Submit an intention for prayer.
+            </p>
+
+            <a
+                href="#request-form"
+                class="hero-button"
+            >
+                Submit a Prayer Request
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav aria-label="Prayer request page navigation">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="prayer-center.html">
+            Prayer Center
+        </a>
+
+        <a href="#request-form">
+            Request Form
+        </a>
+
+        <a href="#guidelines">
+            Guidelines
+        </a>
+
+        <a href="#contacts">
+            Direct Contact
+        </a>
+
+        <a href="enquiry.html">
+            General Enquiries
+        </a>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main>
+
+
+        <!-- ================= INTRODUCTION ================= -->
+
+        <section>
+
+            <h2>We Will Pray with You</h2>
+
+            <p class="page-introduction">
+                You may submit a prayer intention for yourself,
+                your family, a sick person, a vocation,
+                thanksgiving, peace, the faithful departed,
+                or another genuine need.
+            </p>
+
+            <blockquote>
+                “Where two or three are gathered in my name,
+                there am I in the midst of them.”
+
+                <br><br>
+
+                <strong>Matthew 18:20</strong>
+            </blockquote>
+
+        </section>
+
+
+        <!-- ================= REQUEST TYPES ================= -->
+
+        <section>
+
+            <h2>Prayer Intentions</h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <h3>Healing</h3>
+
+                    <p>
+                        Prayer for physical, emotional,
+                        mental, or spiritual healing.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Family</h3>
+
+                    <p>
+                        Prayer for marriage, children,
+                        reconciliation, unity, and family life.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Vocations</h3>
+
+                    <p>
+                        Prayer for priesthood, religious life,
+                        marriage, discernment, and faithful service.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>The Faithful Departed</h3>
+
+                    <p>
+                        Prayer for those who have died
+                        and for their grieving families.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Thanksgiving</h3>
+
+                    <p>
+                        Prayer of gratitude for blessings,
+                        answered prayers, and God’s mercy.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Special Intention</h3>
+
+                    <p>
+                        Submit another personal, pastoral,
+                        community, or spiritual intention.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRAYER REQUEST FORM ================= -->
+
+        <section id="request-form">
+
+            <h2>Submit Your Prayer Request</h2>
+
+            <p>
+                Complete the form below. You may write
+                “Anonymous” if you do not want to give your name.
+            </p>
+
+            <form
+                action="https://formspree.io/f/mnpaajbz"
+                method="POST"
+                data-enquiry-form
+            >
+
+                <label for="prayer-name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="prayer-name"
+                    name="Full Name"
+                    placeholder="Enter your full name or write Anonymous"
+                    autocomplete="name"
+                >
+
+
+                <label for="prayer-email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="prayer-email"
+                    name="Email"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                    required
+                >
+
+
+                <label for="prayer-country">
+                    Country
+                </label>
+
+                <input
+                    type="text"
+                    id="prayer-country"
+                    name="Country"
+                    placeholder="Enter your country"
+                    autocomplete="country-name"
+                >
+
+
+                <label for="intention-type">
+                    Type of Prayer Intention
+                </label>
+
+                <select
+                    id="intention-type"
+                    name="Prayer Type"
+                    required
+                >
+
+                    <option value="">
+                        Select an intention
+                    </option>
+
+                    <option value="Healing">
+                        Healing
+                    </option>
+
+                    <option value="Family">
+                        Family
+                    </option>
+
+                    <option value="Vocation">
+                        Vocation
+                    </option>
+
+                    <option value="Thanksgiving">
+                        Thanksgiving
+                    </option>
+
+                    <option value="Peace">
+                        Peace
+                    </option>
+
+                    <option value="The Faithful Departed">
+                        The Faithful Departed
+                    </option>
+
+                    <option value="Special Intention">
+                        Special Intention
+                    </option>
+
+                </select>
+
+
+                <label for="prayer-intention">
+                    Prayer Request
+                </label>
+
+                <textarea
+                    id="prayer-intention"
+                    name="Prayer Request"
+                    rows="8"
+                    placeholder="Write your prayer request here"
+                    required
+                ></textarea>
+
+
+                <label class="consent-label">
+
+                    <input
+                        type="checkbox"
+                        name="Keep Private"
+                        value="Yes"
+                    >
+
+                    Keep this prayer request private.
+
+                </label>
+
+
+                <label class="consent-label">
+
+                    <input
+                        type="checkbox"
+                        name="Consent"
+                        value="Yes"
+                        required
+                    >
+
+                    I confirm that this is a genuine prayer request
+                    and that the information may be received for
+                    prayer and pastoral response.
+
+                </label>
+
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Prayer Request - Come, Follow Me Ministry"
+                >
+                
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="thank-you.html"
+                >
+
+
+                <button type="submit">
+                    Submit Prayer Request
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= GUIDELINES ================= -->
+
+        <section id="guidelines">
+
+            <h2>Prayer Request Guidelines</h2>
+
+            <ul>
+
+                <li>
+                    Do not include passwords, bank details,
+                    identification documents, or financial information.
+                </li>
+
+                <li>
+                    Avoid sharing another person’s private medical
+                    or family information without permission.
+                </li>
+
+                <li>
+                    Prayer requests are not a substitute for emergency,
+                    medical, legal, or professional assistance.
+                </li>
+
+                <li>
+                    For urgent danger or medical emergencies,
+                    contact the appropriate local emergency service.
+                </li>
+
+                <li>
+                    Use this page respectfully and only for genuine intentions.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ================= DIRECT CONTACT ================= -->
+
+        <section id="contacts">
+
+            <h2>Direct Prayer Contact</h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <h3>WhatsApp</h3>
+
+                    <p>
+                        Send a prayer intention through WhatsApp.
+                    </p>
+
+                    <a
+                        href="https://wa.me/67573225566?text=Hello.%20I%20would%20like%20to%20submit%20a%20prayer%20request."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Send Prayer Request
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Email</h3>
+
+                    <p>
+                        Send a prayer intention by email.
+                    </p>
+
+                    <a
+                        href="mailto:okolicosmasco@gmail.com?subject=Prayer%20Request"
+                        class="hero-button"
+                    >
+                        Email Prayer Request
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Prayer Center</h3>
+
+                    <p>
+                        Pray the Rosary, Divine Mercy Chaplet,
+                        litanies, and the Liturgy of the Hours.
+                    </p>
+
+                    <a
+                        href="prayer-center.html"
+                        class="hero-button"
+                    >
+                        Open Prayer Center
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>Come, Follow Me</h3>
+
+        <p>
+            A Catholic ministry dedicated to faith, formation,
+            prayer, vocation, and service.
+        </p>
+
+        <div class="social-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="prayer-center.html">
+                Prayer Center
+            </a>
+
+            <a href="enquiry.html">
+                Enquiries
+            </a>
+
+            <a href="#top">
+                Back to Top
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © <span data-current-year>2026</span>
+            Okoli Cosmas Odinaka. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
