@@ -1521,4 +1521,535 @@ body.dark-mode .theme-toggle{
         color: white !important;
     }
 
+}/* =========================================================
+   MINISTRY HOMEPAGE SECTIONS
+   ========================================================= */
+
+.ministry-hub,
+.featured-content,
+.community-section {
+    padding: 70px 20px;
+}
+
+.section-heading {
+    max-width: 780px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.section-label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #b88900;
+}
+
+.section-heading h2 {
+    margin-bottom: 15px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+.section-heading p {
+    margin: 0 auto;
+    max-width: 680px;
+}
+
+.ministry-grid,
+.featured-grid,
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.community-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ministry-card,
+.featured-card,
+.community-card {
+    padding: 28px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 18px;
+    background: var(--card-background, #ffffff);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.ministry-card,
+.community-card {
+    text-align: center;
+}
+
+.ministry-card h3,
+.featured-card h3,
+.community-card h3 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+}
+
+.ministry-card p,
+.featured-card p,
+.community-card p {
+    margin-bottom: 22px;
+}
+
+.ministry-icon {
+    font-size: 2.4rem;
+}
+
+.content-type {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(184, 137, 0, 0.14);
+    color: #8a6600;
+}
+
+.featured-card a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.featured-card a:hover {
+    text-decoration: underline;
+}
+
+.featured-content {
+    background: rgba(128, 128, 128, 0.06);
+}
+
+body.dark-mode .ministry-card,
+body.dark-mode .featured-card,
+body.dark-mode .community-card {
+    background: #16202b;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .content-type {
+    background: rgba(255, 215, 0, 0.14);
+    color: #ffd966;
+}
+
+@media (max-width: 1000px) {
+    .ministry-grid,
+    .featured-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .ministry-hub,
+    .featured-content,
+    .community-section {
+        padding: 50px 16px;
+    }
+
+    .ministry-grid,
+    .featured-grid,
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ministry-card,
+    .featured-card,
+    .community-card {
+        padding: 24px 20px;
+    }
+}/* =========================================================
+   IMPROVED DOWNLOAD LIBRARY
+   ========================================================= */
+
+.downloads-page {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 55px 0 80px;
+}
+
+.downloads-introduction {
+    max-width: 780px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.downloads-introduction h2 {
+    margin: 8px 0 15px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+.download-search-section {
+    max-width: 760px;
+    margin: 0 auto 38px;
+    padding: 24px;
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.download-search-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.download-search-section input {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 16px;
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    font: inherit;
+    background: #ffffff;
+    color: #222222;
+}
+
+.download-search-section input:focus {
+    border-color: #987000;
+    outline: 3px solid rgba(152, 112, 0, 0.16);
+}
+
+.download-search-message {
+    min-height: 24px;
+    margin: 10px 0 0;
+    font-weight: 600;
+}
+
+.download-group {
+    margin: 22px 0;
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08);
+}
+
+.download-group summary {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.download-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.download-group summary:hover {
+    background: rgba(152, 112, 0, 0.06);
+}
+
+.download-group summary:focus-visible {
+    outline: 3px solid rgba(152, 112, 0, 0.25);
+    outline-offset: -3px;
+}
+
+.download-group-icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    border-radius: 14px;
+    background: rgba(152, 112, 0, 0.12);
+    font-size: 2rem;
+}
+
+.download-group-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.download-group-heading strong {
+    font-size: 1.45rem;
+}
+
+.download-group-heading small {
+    color: #595959;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.download-group-action {
+    min-width: 68px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: #8b6800;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.download-group-content {
+    padding: 8px 25px 28px;
+    border-top: 1px solid rgba(100, 100, 100, 0.16);
+}
+
+.download-list {
+    display: grid;
+    gap: 16px;
+    padding-top: 20px;
+}
+
+.resource-download-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid rgba(100, 100, 100, 0.18);
+    border-radius: 14px;
+    background: rgba(128, 128, 128, 0.035);
+}
+
+.resource-download-card[hidden] {
+    display: none;
+}
+
+.file-icon {
+    display: grid;
+    width: 64px;
+    height: 64px;
+    place-items: center;
+    border-radius: 12px;
+    background: #ece3c9;
+    color: #554000;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.file-information h3 {
+    margin: 0 0 7px;
+    font-size: 1.18rem;
+}
+
+.file-information p {
+    margin: 0 0 10px;
+    line-height: 1.6;
+}
+
+.file-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.file-details span {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: rgba(100, 100, 100, 0.09);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.file-action {
+    min-width: 138px;
+    text-align: center;
+}
+
+.coming-soon {
+    display: inline-block;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: rgba(100, 100, 100, 0.11);
+    color: #555555;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.download-information {
+    max-width: 850px;
+    margin: 55px auto 0;
+    padding: 30px;
+    border-radius: 18px;
+    background: rgba(152, 112, 0, 0.08);
+}
+
+.download-information h2 {
+    margin-top: 0;
+}
+
+
+/* ================= DARK MODE ================= */
+
+body.dark-mode .download-search-section,
+body.dark-mode .download-group {
+    background: #17212d;
+    border-color: rgba(255, 255, 255, 0.13);
+}
+
+body.dark-mode .download-search-section input {
+    background: #0f1822;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+body.dark-mode .download-group-heading small {
+    color: #ced5dd;
+}
+
+body.dark-mode .resource-download-card {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .file-icon {
+    background: rgba(255, 217, 102, 0.15);
+    color: #ffdf7e;
+}
+
+body.dark-mode .file-details span,
+body.dark-mode .coming-soon {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e8edf2;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 720px) {
+
+    .downloads-page {
+        width: min(100% - 24px, 1180px);
+        padding-top: 38px;
+    }
+
+    .download-group summary {
+        grid-template-columns: auto 1fr;
+        gap: 14px;
+        padding: 20px 16px;
+    }
+
+    .download-group-action {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .download-group-content {
+        padding: 5px 14px 20px;
+    }
+
+    .resource-download-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .file-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .file-action {
+        width: 100%;
+        text-align: left;
+    }
+
+}.resource-download-card audio,
+.resource-download-card video {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    margin: 14px 0;
+    border-radius: 10px;
+}
+
+.resource-download-card video {
+    background: #000000;
+}/* =========================================================
+   NEW MINISTRY PAGES
+   ========================================================= */
+
+.page-hero {
+    padding: 55px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #073a60, #14547e);
+    color: #ffffff;
+}
+
+.page-hero h1 {
+    margin: 18px 0 12px;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+.page-hero p {
+    max-width: 760px;
+    margin: 0 auto 25px;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.newsletter-section {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-box {
+    margin-top: 30px;
+    padding: 35px;
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-table-wrapper {
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 15px;
+    border: 1px solid #d5d5d5;
+    text-align: left;
+}
+
+.schedule-table th {
+    background: #073a60;
+    color: #ffffff;
+}
+
+body.dark-mode .newsletter-box,
+body.dark-mode .schedule-table {
+    background: #17212d;
+}
+
+body.dark-mode .schedule-table td {
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 700px) {
+
+    .page-hero {
+        padding: 42px 16px;
+    }
+
+    .newsletter-box {
+        padding: 25px 18px;
+    }
+
 }
