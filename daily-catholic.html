@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,35 +12,41 @@
 
     <meta
         name="description"
-        content="Read today's Catholic Mass readings and Gospel, discover the Saint of the Day, pray the daily prayer, and access today's Liturgy of the Hours."
+        content="Today's Catholic Mass readings, Gospel reflection, Saint of the Day, daily prayer, and complete Liturgy of the Hours."
     >
 
-    <title>Today in the Church | Come, Follow Me</title>
+    <title>
+        Today in the Church | Come, Follow Me Catholic Ministry
+    </title>
 
     <link
         rel="icon"
         type="image/jpeg"
-        href="Logo/Cross.jpg"
+        href="logo/Cross.jpg"
     >
 
     <link
         rel="stylesheet"
         href="style.css"
     >
+
 </head>
 
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
     <header id="top">
 
         <div class="hero">
 
             <img
-                src="Logo/Cross.jpg"
-                alt="Cross symbol of the Come, Follow Me Catholic ministry"
+                src="logo/Cross.jpg"
+                alt="Cross symbol of Come, Follow Me Catholic Ministry"
                 class="logo"
             >
 
@@ -64,7 +71,7 @@
                 href="#daily-overview"
                 class="hero-button"
             >
-                Begin Today’s Prayer
+                Begin Today’s Catholic Journey
             </a>
 
         </div>
@@ -72,59 +79,88 @@
     </header>
 
 
-    <!-- ================= NAVIGATION ================= -->
+    <!-- =====================================================
+         MAIN NAVIGATION
+         ===================================================== -->
 
-    <nav aria-label="Daily Catholic page navigation">
+    <nav
+        class="main-navigation"
+        aria-label="Main website navigation"
+    >
 
-        <a href="index.html">
-            Home
-        </a>
+        <button
+            class="mobile-menu-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            ☰ Menu
+        </button>
 
-        <a href="#daily-overview">
-            Today
-        </a>
 
-        <a href="#readings">
-            Mass Readings
-        </a>
+        <div
+            class="main-menu"
+            id="main-menu"
+        >
 
-        <a href="#gospel">
-            Gospel
-        </a>
+            <a href="index.html">
+                Home
+            </a>
 
-        <a href="#saint">
-            Saint
-        </a>
+            <a
+                href="daily-catholic.html"
+                aria-current="page"
+            >
+                Today
+            </a>
 
-        <a href="#daily-prayer">
-            Daily Prayer
-        </a>
+            <a href="prayer-center.html">
+                Prayer
+            </a>
 
-        <a href="#hours">
-            Divine Office
-        </a>
+            <a href="formation.html">
+                Formation
+            </a>
 
-        <a href="prayer-request.html">
-            Prayer Requests
-        </a>
+            <a href="media.html">
+                Media
+            </a>
 
-        <a href="prayer-center.html">
-            Prayer Center
-        </a>
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="enquiry.html">
+                Contact
+            </a>
+
+        </div>
 
     </nav>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
 
     <main>
 
 
-        <!-- ================= TODAY ================= -->
+        <!-- =================================================
+             TODAY OVERVIEW
+             ================================================= -->
 
         <section id="daily-overview">
 
-            <h2>Today’s Catholic Life</h2>
+            <p class="section-label">
+                Daily Catholic Life
+            </p>
+
+            <h2>Today in the Church</h2>
 
             <p
                 id="full-current-date"
@@ -133,14 +169,19 @@
                 Loading today’s date...
             </p>
 
-            <p>
-                This page gives direct access to the Catholic resources
-                appointed for the current day. The date and Prayer of the Day
-                update automatically through your website’s JavaScript.
+            <p class="page-introduction">
+                This page connects you with current Catholic resources
+                for today. The Scripture readings, Gospel reflection,
+                saints, and Liturgy of the Hours are maintained by
+                established Catholic sources and update according to
+                the current date.
             </p>
+
 
             <div class="cards">
 
+
+                <!-- MASS -->
 
                 <article class="card">
 
@@ -148,65 +189,100 @@
 
                     <p>
                         Read the First Reading, Responsorial Psalm,
-                        Second Reading when appointed, Gospel Acclamation,
-                        and Gospel.
+                        Second Reading when appointed, Gospel
+                        Acclamation, and Gospel.
                     </p>
 
                     <a
-                        href="#readings"
+                        href="https://universalis.com/mass.htm"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Open Mass Readings
+                        Read Today’s Mass
                     </a>
 
                 </article>
 
+
+                <!-- GOSPEL -->
 
                 <article class="card">
 
-                    <h3>Today’s Gospel</h3>
+                    <h3>Gospel and Reflection</h3>
 
                     <p>
-                        Listen prayerfully to the Gospel proclaimed
-                        by the Church today.
+                        Read today’s Gospel and a Catholic reflection
+                        from Vatican News.
                     </p>
 
                     <a
-                        href="#gospel"
+                        href="#"
+                        id="today-word-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Read the Gospel
+                        Read Gospel & Reflection
                     </a>
 
                 </article>
 
+
+                <!-- SAINT -->
 
                 <article class="card">
 
                     <h3>Saint of the Day</h3>
 
                     <p>
-                        Learn from the saints and holy witnesses
-                        remembered in the Church’s calendar today.
+                        Discover the saints remembered by the Church
+                        today and learn from their witness.
                     </p>
 
                     <a
-                        href="#saint"
+                        href="#"
+                        id="today-saint-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Discover Today’s Saint
+                        Meet Today’s Saints
                     </a>
 
                 </article>
 
+
+                <!-- BREVIARY -->
+
+                <article class="card">
+
+                    <h3>Complete Divine Office</h3>
+
+                    <p>
+                        Pray the Office of Readings, Lauds, Terce,
+                        Sext, None, Vespers, and Compline.
+                    </p>
+
+                    <a
+                        href="#hours"
+                        class="hero-button"
+                    >
+                        Open Today’s Breviary
+                    </a>
+
+                </article>
+
+
+                <!-- DAILY PRAYER -->
 
                 <article class="card">
 
                     <h3>Prayer of the Day</h3>
 
                     <p>
-                        Pray a short reflection selected automatically
-                        according to the current day.
+                        Pause for a short daily prayer and place
+                        the needs of the day before God.
                     </p>
 
                     <a
@@ -218,32 +294,63 @@
 
                 </article>
 
+
+                <!-- LITURGICAL DAY -->
+
+                <article class="card">
+
+                    <h3>Today’s Liturgical Celebration</h3>
+
+                    <p>
+                        See the current memorial, feast, solemnity,
+                        or weekday of the Church year.
+                    </p>
+
+                    <a
+                        href="https://universalis.com/today.htm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        View Today
+                    </a>
+
+                </article>
+
+
             </div>
 
         </section>
 
 
-        <!-- ================= MASS READINGS ================= -->
+        <!-- =================================================
+             MASS READINGS
+             ================================================= -->
 
         <section id="readings">
+
+            <p class="section-label">
+                Sacred Scripture
+            </p>
 
             <h2>Today’s Mass Readings</h2>
 
             <p class="page-introduction">
-                Read the complete Scripture readings appointed for
-                today’s Catholic Mass.
+                The links below open Catholic sources that maintain
+                the readings for the current liturgical day.
             </p>
+
 
             <div class="cards">
 
 
                 <article class="card">
 
-                    <h3>Universalis Daily Mass</h3>
+                    <h3>Universalis — Readings at Mass</h3>
 
                     <p>
-                        Open today’s Mass readings, including the Gospel,
-                        according to the current liturgical date.
+                        Read today’s complete Mass readings
+                        according to the liturgical calendar.
                     </p>
 
                     <a
@@ -252,7 +359,7 @@
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Read Today’s Mass Readings
+                        Open Today’s Readings
                     </a>
 
                 </article>
@@ -263,8 +370,8 @@
                     <h3>USCCB Daily Readings</h3>
 
                     <p>
-                        Access another reliable Catholic source for
-                        the readings of the day.
+                        Use the United States Conference of Catholic
+                        Bishops as an additional Catholic Scripture source.
                     </p>
 
                     <a
@@ -278,47 +385,63 @@
 
                 </article>
 
+
             </div>
 
         </section>
 
 
-        <!-- ================= GOSPEL ================= -->
+        <!-- =================================================
+             GOSPEL AND REFLECTION
+             ================================================= -->
 
         <section id="gospel">
 
-            <h2>Today’s Gospel</h2>
-
-            <p>
-                Before reading the Gospel, pause in silence and ask the
-                Holy Spirit to help you hear the voice of Christ.
+            <p class="section-label">
+                Word of the Day
             </p>
 
+            <h2>Today’s Gospel and Reflection</h2>
+
+            <p class="page-introduction">
+                Vatican News publishes a daily Word of the Day
+                containing Scripture and Catholic commentary.
+            </p>
+
+
             <blockquote>
+
                 Speak, Lord, for your servant is listening.
+
                 <br><br>
-                <strong>1 Samuel 3:10</strong>
+
+                <strong>
+                    1 Samuel 3:10
+                </strong>
+
             </blockquote>
+
 
             <div class="cards">
 
 
                 <article class="card">
 
-                    <h3>Read the Gospel</h3>
+                    <h3>Vatican News Word of the Day</h3>
 
                     <p>
-                        Open today’s complete Mass readings and scroll
-                        to the section marked <strong>Gospel</strong>.
+                        Read today’s biblical readings, Gospel,
+                        and reflection.
                     </p>
 
                     <a
-                        href="https://universalis.com/mass.htm"
+                        href="#"
+                        id="vatican-word-link"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Read Today’s Gospel
+                        Open Today’s Reflection
                     </a>
 
                 </article>
@@ -326,48 +449,104 @@
 
                 <article class="card">
 
-                    <h3>Pray with Scripture</h3>
+                    <h3>Lectio Divina</h3>
 
                     <p>
-                        Continue with Lectio Divina and Catholic Bible
-                        study resources.
+                        Continue praying with today’s Gospel
+                        through reflective reading of Sacred Scripture.
                     </p>
 
                     <a
                         href="scripture.html"
                         class="hero-button"
                     >
-                        Open Scripture Center
+                        Pray with Scripture
                     </a>
 
                 </article>
+
+
+                <article class="card">
+
+                    <h3>Weekly Homily</h3>
+
+                    <p>
+                        Continue to Sunday and feast-day reflections
+                        in the Formation Centre.
+                    </p>
+
+                    <a
+                        href="weekly-homilies.html"
+                        class="hero-button"
+                    >
+                        Open Homilies
+                    </a>
+
+                </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- ================= SAINT OF THE DAY ================= -->
+        <!-- =================================================
+             SAINT OF THE DAY
+             ================================================= -->
 
         <section id="saint">
+
+            <p class="section-label">
+                Witnesses of Holiness
+            </p>
 
             <h2>Saint of the Day</h2>
 
             <p class="page-introduction">
-                The saints show that holiness is possible in every age,
-                culture, vocation, and circumstance.
+                The Vatican News Saints Calendar changes according
+                to the date and presents saints remembered by the
+                Church each day.
             </p>
+
 
             <div class="cards">
 
 
                 <article class="card">
 
-                    <h3>Vatican News Saints Calendar</h3>
+                    <h3>Today’s Saints</h3>
 
                     <p>
-                        Read about the saints and blessed remembered
-                        by the Church today.
+                        <strong id="saint-date">
+                            Loading today’s date...
+                        </strong>
+                    </p>
+
+                    <p>
+                        Discover the saints commemorated today
+                        and read about their lives and witness.
+                    </p>
+
+                    <a
+                        href="#"
+                        id="vatican-saint-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Meet Today’s Saints
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Vatican Saints Calendar</h3>
+
+                    <p>
+                        Browse the wider daily calendar of saints
+                        maintained by Vatican News.
                     </p>
 
                     <a
@@ -376,28 +555,7 @@
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        View Today’s Saints
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Today’s Liturgical Celebration</h3>
-
-                    <p>
-                        See the current feast, memorial, solemnity,
-                        or liturgical celebration.
-                    </p>
-
-                    <a
-                        href="https://universalis.com/today.htm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hero-button"
-                    >
-                        View Today’s Celebration
+                        Open Saints Calendar
                     </a>
 
                 </article>
@@ -408,8 +566,9 @@
                     <h3>Saints Library</h3>
 
                     <p>
-                        Explore more saints, martyrs, apostles,
-                        Doctors of the Church, and modern witnesses.
+                        Explore saints, martyrs, apostles,
+                        Doctors of the Church, missionaries,
+                        and other witnesses of holiness.
                     </p>
 
                     <a
@@ -421,37 +580,55 @@
 
                 </article>
 
+
             </div>
 
         </section>
 
 
-        <!-- ================= AUTOMATIC DAILY PRAYER ================= -->
+        <!-- =================================================
+             DAILY PRAYER
+             ================================================= -->
 
         <section id="daily-prayer">
+
+            <p class="section-label">
+                Daily Prayer
+            </p>
 
             <h2>Prayer of the Day</h2>
 
             <p class="page-introduction">
-                This prayer changes automatically according to the day
-                of the year.
+                Take a moment to entrust this day to God.
             </p>
+
 
             <div class="daily-prayer-box">
 
                 <h3 id="daily-prayer-title">
-                    Loading today’s prayer...
+                    Prayer for Today
                 </h3>
 
                 <p id="daily-prayer-text">
-                    Please wait while today’s prayer is selected.
+
+                    Heavenly Father,
+                    thank You for the gift of this day.
+                    Help me to follow Jesus faithfully,
+                    listen to Your Word,
+                    serve those I meet,
+                    and use every opportunity for Your glory.
+                    Strengthen me against sin,
+                    guide my decisions,
+                    and keep my heart attentive to the Holy Spirit.
+
                 </p>
 
                 <p id="daily-prayer-ending">
-                    Amen.
+                    Through Christ our Lord. Amen.
                 </p>
 
             </div>
+
 
             <div class="text-center">
 
@@ -473,28 +650,37 @@
         </section>
 
 
-        <!-- ================= LITURGY OF THE HOURS ================= -->
+        <!-- =================================================
+             COMPLETE LITURGY OF THE HOURS
+             ================================================= -->
 
         <section id="hours">
 
-            <h2>Today’s Liturgy of the Hours</h2>
+            <p class="section-label">
+                Prayer of the Universal Church
+            </p>
+
+            <h2>Complete Liturgy of the Hours</h2>
 
             <p class="page-introduction">
-                Join the universal Church in sanctifying the hours
-                of the day through psalms, Scripture, intercessions,
-                and prayer.
+                Pray the complete sequence of the Divine Office.
+                Universalis automatically presents the current
+                liturgical texts for each Hour.
             </p>
+
 
             <div class="cards">
 
+
+                <!-- OFFICE OF READINGS -->
 
                 <article class="card">
 
                     <h3>Office of Readings</h3>
 
                     <p>
-                        Pray with psalms, Scripture, and readings
-                        from the Church’s spiritual tradition.
+                        Psalms, Scripture, and a substantial spiritual
+                        reading from the tradition of the Church.
                     </p>
 
                     <a
@@ -509,13 +695,15 @@
                 </article>
 
 
+                <!-- LAUDS -->
+
                 <article class="card">
 
-                    <h3>Morning Prayer</h3>
+                    <h3>Morning Prayer — Lauds</h3>
 
                     <p>
-                        Begin the day with praise, Scripture,
-                        the Benedictus, and intercessions.
+                        Begin the day with psalms, Scripture,
+                        the Benedictus, intercessions, and prayer.
                     </p>
 
                     <a
@@ -530,13 +718,15 @@
                 </article>
 
 
+                <!-- TERCE -->
+
                 <article class="card">
 
-                    <h3>Mid-Morning Prayer</h3>
+                    <h3>Mid-Morning Prayer — Terce</h3>
 
                     <p>
-                        Pause during the morning and return
-                        your attention to God.
+                        Sanctify the morning through psalmody,
+                        Scripture, and prayer.
                     </p>
 
                     <a
@@ -545,19 +735,21 @@
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Pray Mid-Morning Prayer
+                        Pray Terce
                     </a>
 
                 </article>
 
 
+                <!-- SEXT -->
+
                 <article class="card">
 
-                    <h3>Midday Prayer</h3>
+                    <h3>Midday Prayer — Sext</h3>
 
                     <p>
-                        Sanctify the middle of the day through
-                        psalmody and prayer.
+                        Pause at midday and return your attention
+                        to the presence of God.
                     </p>
 
                     <a
@@ -566,19 +758,21 @@
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Pray Midday Prayer
+                        Pray Sext
                     </a>
 
                 </article>
 
 
+                <!-- NONE -->
+
                 <article class="card">
 
-                    <h3>Afternoon Prayer</h3>
+                    <h3>Afternoon Prayer — None</h3>
 
                     <p>
-                        Continue the day in remembrance
-                        of God’s presence.
+                        Continue the day through the prayer
+                        of the Church.
                     </p>
 
                     <a
@@ -587,19 +781,21 @@
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Pray Afternoon Prayer
+                        Pray None
                     </a>
 
                 </article>
 
 
+                <!-- VESPERS -->
+
                 <article class="card">
 
-                    <h3>Evening Prayer</h3>
+                    <h3>Evening Prayer — Vespers</h3>
 
                     <p>
-                        Give thanks for the day through the psalms,
-                        Magnificat, Scripture, and intercessions.
+                        Give thanks for the day through psalms,
+                        Scripture, the Magnificat, and intercessions.
                     </p>
 
                     <a
@@ -614,9 +810,11 @@
                 </article>
 
 
+                <!-- COMPLINE -->
+
                 <article class="card">
 
-                    <h3>Night Prayer</h3>
+                    <h3>Night Prayer — Compline</h3>
 
                     <p>
                         End the day with examination of conscience,
@@ -635,17 +833,19 @@
                 </article>
 
 
+                <!-- UNIVERSALIS HOME -->
+
                 <article class="card">
 
-                    <h3>Complete Daily Office</h3>
+                    <h3>Complete Breviary Portal</h3>
 
                     <p>
-                        Open the complete daily prayer portal
-                        with every hour of the Divine Office.
+                        Open Universalis to access all daily Hours,
+                        liturgical information, and Mass readings.
                     </p>
 
                     <a
-                        href="https://universalis.com/index.htm"
+                        href="https://universalis.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hero-button"
@@ -655,16 +855,98 @@
 
                 </article>
 
+
+            </div>
+
+
+            <p class="page-introduction">
+                Note: Universalis provides the worldwide General
+                Calendar online. Local diocesan celebrations may
+                occasionally differ from the general calendar.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             ALOTAU-SIDEIA
+             ================================================= -->
+
+        <section id="alotau">
+
+            <p class="section-label">
+                Local Church
+            </p>
+
+            <h2>Diocese of Alotau-Sideia</h2>
+
+            <p class="page-introduction">
+                For diocesan information and current announcements,
+                use the official Catholic Bishops Conference of
+                Papua New Guinea and Solomon Islands diocesan page.
+            </p>
+
+
+            <div class="cards">
+
+
+                <article class="card">
+
+                    <h3>Diocese of Alotau-Sideia</h3>
+
+                    <p>
+                        Access official diocesan information for the
+                        Catholic Church in Milne Bay Province.
+                    </p>
+
+                    <a
+                        href="https://www.pngsicbc.com/dioceses-1/diocese-of-alotau-sideia"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Diocese Information
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Live Mass Information</h3>
+
+                    <p>
+                        Visit the dedicated Mass information page
+                        for Cathedral and diocesan updates.
+                    </p>
+
+                    <a
+                        href="live-mass.html"
+                        class="hero-button"
+                    >
+                        View Mass Information
+                    </a>
+
+                </article>
+
+
             </div>
 
         </section>
 
 
-        <!-- ================= CONTINUE PRAYING ================= -->
+        <!-- =================================================
+             CONTINUE PRAYING
+             ================================================= -->
 
         <section id="continue-praying">
 
-            <h2>Continue Today’s Prayer</h2>
+            <p class="section-label">
+                Continue in Prayer
+            </p>
+
+            <h2>More Catholic Prayer</h2>
+
 
             <div class="cards">
 
@@ -674,7 +956,7 @@
                     <h3>Holy Rosary</h3>
 
                     <p>
-                        Meditate on the mysteries of Jesus Christ
+                        Meditate on the mysteries of Christ
                         with the Blessed Virgin Mary.
                     </p>
 
@@ -712,8 +994,8 @@
                     <h3>Catholic Litanies</h3>
 
                     <p>
-                        Pray the Sacred Heart Litany, Litany of Loreto,
-                        Litany of Saint Joseph, and Litany of the Saints.
+                        Pray traditional litanies
+                        of the Catholic Church.
                     </p>
 
                     <a
@@ -731,8 +1013,9 @@
                     <h3>Prayer Request</h3>
 
                     <p>
-                        Submit an intention for healing, family,
-                        vocation, thanksgiving, or another need.
+                        Submit an intention for healing,
+                        family, vocation, thanksgiving,
+                        or another need.
                     </p>
 
                     <a
@@ -744,6 +1027,45 @@
 
                 </article>
 
+
+                <article class="card">
+
+                    <h3>Prayer Centre</h3>
+
+                    <p>
+                        Access the wider collection of prayers
+                        and devotional resources.
+                    </p>
+
+                    <a
+                        href="prayer-center.html"
+                        class="hero-button"
+                    >
+                        Open Prayer Centre
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Scripture Centre</h3>
+
+                    <p>
+                        Study Sacred Scripture and learn
+                        methods of Catholic Bible prayer.
+                    </p>
+
+                    <a
+                        href="scripture.html"
+                        class="hero-button"
+                    >
+                        Open Scripture
+                    </a>
+
+                </article>
+
+
             </div>
 
         </section>
@@ -752,16 +1074,19 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
     <footer>
 
         <h3>Come, Follow Me</h3>
 
         <p>
-            A Catholic ministry dedicated to faith, formation,
-            prayer, vocation, and service.
+            Proclaiming Christ through prayer,
+            Scripture, formation, and service.
         </p>
+
 
         <div class="social-links">
 
@@ -769,20 +1094,28 @@
                 Home
             </a>
 
+            <a href="daily-catholic.html">
+                Today
+            </a>
+
             <a href="prayer-center.html">
-                Prayer Center
+                Prayer
             </a>
 
-            <a href="scripture.html">
-                Scripture
+            <a href="formation.html">
+                Formation
             </a>
 
-            <a href="prayer-request.html">
-                Prayer Requests
+            <a href="media.html">
+                Media
+            </a>
+
+            <a href="downloads.html">
+                Downloads
             </a>
 
             <a href="enquiry.html">
-                Enquiries
+                Contact
             </a>
 
             <a href="#top">
@@ -791,19 +1124,305 @@
 
         </div>
 
+
         <p class="copyright">
-            © <span data-current-year>2026</span>
-            Okoli Cosmas Odinaka. All Rights Reserved.
+
+            ©
+            <span data-current-year>
+                2026
+            </span>
+
+            Come, Follow Me Catholic Ministry.
+            All Rights Reserved.
+
         </p>
 
     </footer>
 
 
-    <!-- Global website functions -->
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
     <script src="script.js"></script>
 
-    <!-- Automatic date and daily prayer -->
-    <script src="daily-catholic.js"></script>
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                /* =============================================
+                   PAPUA NEW GUINEA DATE
+                   ============================================= */
+
+                const now = new Date();
+
+                const pngDate =
+                    new Intl.DateTimeFormat(
+                        "en-GB",
+                        {
+                            timeZone: "Pacific/Port_Moresby",
+                            weekday: "long",
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    ).format(now);
+
+
+                const automaticDate =
+                    document.getElementById(
+                        "automatic-date"
+                    );
+
+                const fullDate =
+                    document.getElementById(
+                        "full-current-date"
+                    );
+
+                const saintDate =
+                    document.getElementById(
+                        "saint-date"
+                    );
+
+
+                if (automaticDate) {
+                    automaticDate.textContent =
+                        pngDate;
+                }
+
+
+                if (fullDate) {
+                    fullDate.textContent =
+                        pngDate;
+                }
+
+
+                if (saintDate) {
+                    saintDate.textContent =
+                        pngDate;
+                }
+
+
+                /* =============================================
+                   GET YEAR / MONTH / DAY IN PNG
+                   ============================================= */
+
+                const dateParts =
+                    new Intl.DateTimeFormat(
+                        "en-CA",
+                        {
+                            timeZone:
+                                "Pacific/Port_Moresby",
+
+                            year: "numeric",
+
+                            month: "2-digit",
+
+                            day: "2-digit"
+                        }
+                    ).formatToParts(now);
+
+
+                function getDatePart(type) {
+
+                    const part =
+                        dateParts.find(
+                            item =>
+                                item.type === type
+                        );
+
+                    return part
+                        ? part.value
+                        : "";
+
+                }
+
+
+                const year =
+                    getDatePart("year");
+
+                const month =
+                    getDatePart("month");
+
+                const day =
+                    getDatePart("day");
+
+
+                /* =============================================
+                   VATICAN NEWS WORD OF THE DAY
+                   ============================================= */
+
+                const wordUrl =
+                    "https://www.vaticannews.va/" +
+                    "en/word-of-the-day/" +
+                    year +
+                    "/" +
+                    month +
+                    "/" +
+                    day +
+                    ".html";
+
+
+                const wordLinks = [
+
+                    document.getElementById(
+                        "today-word-link"
+                    ),
+
+                    document.getElementById(
+                        "vatican-word-link"
+                    )
+
+                ];
+
+
+                wordLinks.forEach(
+                    function (link) {
+
+                        if (link) {
+                            link.href =
+                                wordUrl;
+                        }
+
+                    }
+                );
+
+
+                /* =============================================
+                   VATICAN SAINT OF THE DAY
+                   ============================================= */
+
+                const saintUrl =
+                    "https://www.vaticannews.va/" +
+                    "en/saints/" +
+                    month +
+                    "/" +
+                    day +
+                    ".html";
+
+
+                const saintLinks = [
+
+                    document.getElementById(
+                        "today-saint-link"
+                    ),
+
+                    document.getElementById(
+                        "vatican-saint-link"
+                    )
+
+                ];
+
+
+                saintLinks.forEach(
+                    function (link) {
+
+                        if (link) {
+                            link.href =
+                                saintUrl;
+                        }
+
+                    }
+                );
+
+
+                /* =============================================
+                   COPY DAILY PRAYER
+                   ============================================= */
+
+                const copyButton =
+                    document.getElementById(
+                        "copy-daily-prayer"
+                    );
+
+                const copyMessage =
+                    document.getElementById(
+                        "copy-prayer-message"
+                    );
+
+
+                if (copyButton) {
+
+                    copyButton.addEventListener(
+                        "click",
+                        async function () {
+
+                            const title =
+                                document.getElementById(
+                                    "daily-prayer-title"
+                                );
+
+                            const prayer =
+                                document.getElementById(
+                                    "daily-prayer-text"
+                                );
+
+                            const ending =
+                                document.getElementById(
+                                    "daily-prayer-ending"
+                                );
+
+
+                            const prayerText =
+                                [
+                                    title
+                                        ? title.textContent
+                                        : "",
+
+                                    prayer
+                                        ? prayer.textContent
+                                        : "",
+
+                                    ending
+                                        ? ending.textContent
+                                        : ""
+                                ]
+                                .join("\n\n")
+                                .trim();
+
+
+                            try {
+
+                                await navigator
+                                    .clipboard
+                                    .writeText(
+                                        prayerText
+                                    );
+
+
+                                if (copyMessage) {
+
+                                    copyMessage
+                                        .textContent =
+                                        "Prayer copied.";
+
+                                }
+
+                            } catch (error) {
+
+                                if (copyMessage) {
+
+                                    copyMessage
+                                        .textContent =
+                                        "Unable to copy automatically.";
+
+                                }
+
+                            }
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
 
 </body>
 

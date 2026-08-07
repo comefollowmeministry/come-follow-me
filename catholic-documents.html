@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,59 +12,234 @@
 
     <meta
         name="description"
-        content="Official Catholic documents including the Catechism, Vatican II texts, Canon Law, papal encyclicals, social teaching, and major Church documents."
+        content="Official Catholic Church documents including papal encyclicals, apostolic exhortations, constitutions, letters, motu proprio, papal bulls, briefs, Vatican II documents, the Catechism, Canon Law and Catholic social teaching."
     >
 
-    <title>Catholic Documents | Come, Follow Me</title>
+    <title>
+        Catholic Church Documents Library | Come, Follow Me
+    </title>
 
     <link
         rel="icon"
         type="image/jpeg"
-        href="Logo/Cross.jpg"
+        href="logo/Cross.jpg"
     >
 
     <link
         rel="stylesheet"
         href="style.css"
     >
+
+
+    <style>
+
+        /* =========================================================
+           CHURCH DOCUMENT LIBRARY
+           ========================================================= */
+
+        .document-library-intro {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+
+        .document-search-area {
+            max-width: 850px;
+            margin: 35px auto;
+        }
+
+
+        .document-search-area label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+
+        .document-search-area input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 16px 18px;
+            border: 1px solid #777777;
+            border-radius: 12px;
+            font: inherit;
+            background: transparent;
+            color: inherit;
+        }
+
+
+        .document-search-area input:focus {
+            outline: 3px solid rgba(8, 119, 209, 0.2);
+            border-color: #0877d1;
+        }
+
+
+        /* =========================================================
+           SECTION NAVIGATION
+           ========================================================= */
+
+        .document-library-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 28px auto 40px;
+        }
+
+
+        .document-library-button {
+            display: inline-block;
+            padding: 12px 19px;
+            border: 2px solid #0877d1;
+            border-radius: 30px;
+            background: #0877d1;
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .document-library-button:hover,
+        .document-library-button:focus-visible {
+            background: #055b9f;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* Prevent sticky menu hiding anchor headings */
+
+        #document-types,
+        #popes,
+        #bulls,
+        #councils,
+        #doctrine,
+        #resources {
+            scroll-margin-top: 110px;
+        }
+
+
+        /* =========================================================
+           INFORMATION NOTE
+           ========================================================= */
+
+        .document-library-note {
+            max-width: 900px;
+            margin: 30px auto 50px;
+            padding: 22px;
+            border-left: 5px solid #0877d1;
+            border-radius: 12px;
+            background: rgba(8, 119, 209, 0.08);
+        }
+
+
+        .document-category-heading {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+
+        .document-category-description {
+            max-width: 850px;
+            margin: 0 auto 35px;
+            text-align: center;
+        }
+
+
+        .official-source-label {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 5px 11px;
+            border-radius: 20px;
+            background: rgba(8, 119, 209, 0.12);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+
+        /* Search results */
+
+        .document-card[hidden] {
+            display: none !important;
+        }
+
+
+        #no-document-results {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .document-library-navigation {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .document-library-button {
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
     <header id="top">
 
         <div class="hero">
 
             <img
-                src="Logo/Cross.jpg"
-                alt="Cross symbol of the Come, Follow Me Catholic ministry"
+                src="logo/Cross.jpg"
+                alt="Cross symbol of Come, Follow Me Catholic Ministry"
                 class="logo"
             >
 
-            <h1>Catholic Documents</h1>
+            <h1>
+                Catholic Church Documents Library
+            </h1>
 
             <p class="verse">
-                “Always be ready to give an explanation
-                to anyone who asks you for a reason for your hope.”
+                “The Church of the living God,
+                the pillar and foundation of truth.”
             </p>
 
             <p class="subtitle">
-                1 Peter 3:15
+                1 Timothy 3:15
             </p>
 
-            <p class="subtitle">
-                Official teachings, councils, laws,
-                encyclicals, and documents of the Catholic Church.
+            <p>
+                Papal documents, councils, doctrine,
+                Canon Law and other official Catholic texts
+                gathered in one central library.
             </p>
 
             <a
-                href="#documents"
+                href="#library"
                 class="hero-button"
             >
-                Explore Church Documents
+                Open Documents Library
             </a>
 
         </div>
@@ -71,405 +247,232 @@
     </header>
 
 
-    <!-- ================= NAVIGATION ================= -->
+    <!-- =====================================================
+         MAIN NAVIGATION
+         ===================================================== -->
 
-    <nav aria-label="Catholic documents navigation">
+    <nav
+        class="main-navigation"
+        aria-label="Main website navigation"
+    >
 
-        <a href="index.html">
-            Home
-        </a>
+        <button
+            class="mobile-menu-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            ☰ Menu
+        </button>
 
-        <a href="#documents">
-            Documents
-        </a>
 
-        <a href="#catechism">
-            Catechism
-        </a>
+        <div
+            class="main-menu"
+            id="main-menu"
+        >
 
-        <a href="#vatican-two">
-            Vatican II
-        </a>
+            <a href="index.html">
+                Home
+            </a>
 
-        <a href="#canon-law">
-            Canon Law
-        </a>
+            <a href="daily-catholic.html">
+                Today
+            </a>
 
-        <a href="#papal">
-            Papal Documents
-        </a>
+            <a href="prayer-center.html">
+                Prayer
+            </a>
 
-        <a href="#social-teaching">
-            Social Teaching
-        </a>
+            <a href="formation.html">
+                Formation
+            </a>
 
-        <a href="scripture.html">
-            Scripture
-        </a>
+            <a href="media.html">
+                Media
+            </a>
 
-        <a href="enquiry.html">
-            Enquiries
-        </a>
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="enquiry.html">
+                Contact
+            </a>
+
+        </div>
 
     </nav>
 
 
-    <main>
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main id="library">
 
 
-        <!-- ================= INTRODUCTION ================= -->
+        <!-- =================================================
+             INTRODUCTION
+             ================================================= -->
 
-        <section id="documents">
+        <section>
 
-            <h2>Learning from the Church</h2>
+            <div class="document-library-intro">
 
-            <p class="page-introduction">
-                The Catholic Church teaches through Sacred Scripture,
-                Sacred Tradition, councils, papal documents,
-                the Catechism, Canon Law, and the living Magisterium.
-            </p>
+                <p class="section-label">
+                    Official Catholic Sources
+                </p>
 
-            <p>
-                This page provides direct access to official Church
-                documents for prayer, study, formation, catechesis,
-                pastoral ministry, and academic research.
-            </p>
+                <h2>
+                    One Church Documents Library
+                </h2>
 
-            <p>
-                Visitors should read each document carefully,
-                within its historical, theological, pastoral,
-                and ecclesial context.
-            </p>
+                <p class="page-introduction">
+                    This library provides organised access
+                    to official documents maintained by
+                    the Holy See and Vatican.
+                </p>
 
-        </section>
-
-
-        <!-- ================= CATECHISM ================= -->
-
-        <section id="catechism">
-
-            <h2>Catechism of the Catholic Church</h2>
-
-            <p>
-                The Catechism presents the faith of the Catholic Church
-                in four principal parts:
-            </p>
-
-            <div class="cards">
-
-                <article class="card">
-
-                    <h3>Profession of Faith</h3>
-
-                    <p>
-                        The Creed, revelation, the Trinity,
-                        creation, Christ, the Church,
-                        forgiveness, resurrection, and eternal life.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Celebration of the Mystery</h3>
-
-                    <p>
-                        The liturgy, Sacraments,
-                        sacramentals, and the worship of the Church.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Life in Christ</h3>
-
-                    <p>
-                        Human dignity, freedom, virtue,
-                        grace, morality, the Beatitudes,
-                        and the Ten Commandments.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Christian Prayer</h3>
-
-                    <p>
-                        The tradition of prayer,
-                        expressions of prayer,
-                        spiritual struggle, and the Lord’s Prayer.
-                    </p>
-
-                </article>
+                <p>
+                    The original documents remain on official
+                    Church websites so that visitors receive
+                    the authoritative text rather than an
+                    altered or outdated copy.
+                </p>
 
             </div>
 
-            <a
-                href="https://www.vatican.va/archive/ENG0015/_INDEX.HTM"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hero-button"
+
+            <!-- SEARCH -->
+
+            <div class="document-search-area">
+
+                <label for="church-document-search">
+
+                    <strong>
+                        Search this library
+                    </strong>
+
+                </label>
+
+                <input
+                    type="search"
+                    id="church-document-search"
+                    placeholder="Example: encyclical, John Paul II, papal bull, Vatican II, Canon Law..."
+                    aria-label="Search Catholic Church documents"
+                >
+
+            </div>
+
+
+            <!-- SECTION BUTTONS -->
+
+            <div
+                class="document-library-navigation"
+                aria-label="Church document library sections"
             >
-                Read the Official Catechism
-            </a>
 
-            <a
-                href="catechism.html"
-                class="hero-button"
-            >
-                Open Catechism Center
-            </a>
+                <a
+                    href="#document-types"
+                    class="document-library-button"
+                >
+                    Document Types
+                </a>
 
-        </section>
+                <a
+                    href="#popes"
+                    class="document-library-button"
+                >
+                    Popes
+                </a>
 
+                <a
+                    href="#bulls"
+                    class="document-library-button"
+                >
+                    Bulls &amp; Briefs
+                </a>
 
-        <!-- ================= VATICAN II ================= -->
+                <a
+                    href="#councils"
+                    class="document-library-button"
+                >
+                    Councils
+                </a>
 
-        <section id="vatican-two">
+                <a
+                    href="#doctrine"
+                    class="document-library-button"
+                >
+                    Doctrine &amp; Law
+                </a>
 
-            <h2>Second Vatican Council</h2>
-
-            <p class="page-introduction">
-                The Second Vatican Council produced constitutions,
-                decrees, and declarations concerning revelation,
-                liturgy, the Church, mission, ecumenism,
-                religious freedom, and the Church in the modern world.
-            </p>
-
-            <div class="cards">
-
-                <article class="card">
-
-                    <h3>Dei Verbum</h3>
-
-                    <p>
-                        The Dogmatic Constitution on Divine Revelation.
-                    </p>
-
-                    <a
-                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hero-button"
-                    >
-                        Read Dei Verbum
-                    </a>
-
-                </article>
+            </div>
 
 
-                <article class="card">
+            <div class="document-library-note">
 
-                    <h3>Lumen Gentium</h3>
+                <strong>
+                    About this library:
+                </strong>
 
-                    <p>
-                        The Dogmatic Constitution on the Church.
-                    </p>
-
-                    <a
-                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hero-button"
-                    >
-                        Read Lumen Gentium
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Sacrosanctum Concilium</h3>
-
-                    <p>
-                        The Constitution on the Sacred Liturgy.
-                    </p>
-
-                    <a
-                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hero-button"
-                    >
-                        Read Sacrosanctum Concilium
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Gaudium et Spes</h3>
-
-                    <p>
-                        The Pastoral Constitution on the Church
-                        in the Modern World.
-                    </p>
-
-                    <a
-                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hero-button"
-                    >
-                        Read Gaudium et Spes
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Nostra Aetate</h3>
-
-                    <p>
-                        The Declaration on the relation of the Church
-                        to non-Christian religions.
-                    </p>
-
-                    <a
-                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hero-button"
-                    >
-                        Read Nostra Aetate
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>All Vatican II Documents</h3>
-
-                    <p>
-                        Open the official Vatican collection
-                        of all Council documents.
-                    </p>
-
-                    <a
-                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/index.htm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hero-button"
-                    >
-                        View All Documents
-                    </a>
-
-                </article>
+                This ministry does not alter official Church
+                documents. External links open documents
+                maintained by the Holy See. Historical
+                digitisation varies, so some older documents
+                may be available only in Latin, Italian,
+                or another language.
 
             </div>
 
         </section>
 
 
-        <!-- ================= CANON LAW ================= -->
+        <!-- =================================================
+             DOCUMENT TYPES
+             ================================================= -->
 
-        <section id="canon-law">
+        <section id="document-types">
 
-            <h2>Code of Canon Law</h2>
-
-            <p>
-                Canon Law governs the external organisation,
-                responsibilities, rights, Sacraments,
-                institutions, and procedures of the Latin Church.
+            <p class="section-label">
+                Papal Magisterium
             </p>
+
+            <h2 class="document-category-heading">
+                Documents by Type
+            </h2>
+
+            <p class="document-category-description">
+                Browse major categories of papal documents
+                and official teaching.
+            </p>
+
 
             <div class="cards">
 
-                <article class="card">
 
-                    <h3>General Norms</h3>
+                <!-- COMPLETE PAPAL INDEX -->
 
-                    <p>
-                        Ecclesiastical laws, customs,
-                        decrees, administrative acts,
-                        offices, and juridic persons.
-                    </p>
+                <article
+                    class="card document-card"
+                    data-search="complete papal documents archive popes holy see"
+                >
 
-                </article>
+                    <span class="official-source-label">
+                        Official Vatican
+                    </span>
 
-
-                <article class="card">
-
-                    <h3>The People of God</h3>
-
-                    <p>
-                        The rights and duties of the faithful,
-                        hierarchy, dioceses, parishes,
-                        religious institutes, and associations.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Teaching Office</h3>
+                    <h3>
+                        Complete Papal Documents Index
+                    </h3>
 
                     <p>
-                        The proclamation of the Word,
-                        catechesis, missionary activity,
-                        education, and communications.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Sanctifying Office</h3>
-
-                    <p>
-                        The Sacraments, worship,
-                        sacred places, funerals,
-                        vows, and liturgical life.
-                    </p>
-
-                </article>
-
-            </div>
-
-            <a
-                href="https://www.vatican.va/archive/cod-iuris-canonici/cic_index_en.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hero-button"
-            >
-                Read the Code of Canon Law
-            </a>
-
-        </section>
-
-
-        <!-- ================= PAPAL DOCUMENTS ================= -->
-
-        <section id="papal">
-
-            <h2>Papal Documents and Encyclicals</h2>
-
-            <p>
-                Popes teach through encyclicals, apostolic exhortations,
-                apostolic letters, constitutions, messages,
-                homilies, speeches, and other official texts.
-            </p>
-
-            <div class="cards">
-
-                <article class="card">
-
-                    <h3>Papal Documents Archive</h3>
-
-                    <p>
-                        Search official papal writings
-                        across different pontificates.
+                        Begin with the Vatican's central
+                        papal documents collection.
                     </p>
 
                     <a
@@ -484,265 +487,1320 @@
                 </article>
 
 
-                <article class="card">
+                <!-- ENCYCLICALS -->
 
-                    <h3>Encyclicals</h3>
+                <article
+                    class="card document-card"
+                    data-search="encyclicals encyclical papal teaching pope"
+                >
+
+                    <h3>
+                        Encyclicals
+                    </h3>
 
                     <p>
-                        Read major papal teaching documents
-                        on faith, morality, society,
-                        human dignity, peace, and mission.
+                        Major papal letters concerning
+                        faith, doctrine, morality,
+                        Scripture and social questions.
                     </p>
 
                     <a
-                        href="https://www.vatican.va/content/leo-xiv/en/encyclicals.html"
+                        href="https://www.vatican.va/offices/papal_docs_list.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        View Current Encyclicals
+                        Browse Encyclicals
                     </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- EXHORTATIONS -->
 
-                    <h3>Fratelli Tutti</h3>
+                <article
+                    class="card document-card"
+                    data-search="apostolic exhortations exhortation papal synod pastoral"
+                >
+
+                    <h3>
+                        Apostolic Exhortations
+                    </h3>
 
                     <p>
-                        Pope Francis on fraternity,
-                        social friendship, solidarity,
-                        dialogue, and peace.
+                        Papal pastoral teaching on
+                        evangelisation, family life,
+                        vocation, holiness, mission
+                        and Christian living.
                     </p>
 
                     <a
-                        href="https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20201003_enciclica-fratelli-tutti.html"
+                        href="https://www.vatican.va/offices/papal_docs_list.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Read Fratelli Tutti
+                        Browse Exhortations
                     </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- CONSTITUTIONS -->
 
-                    <h3>Laudato Si’</h3>
+                <article
+                    class="card document-card"
+                    data-search="apostolic constitution constitutions pope papal law doctrine"
+                >
+
+                    <h3>
+                        Apostolic Constitutions
+                    </h3>
 
                     <p>
-                        Pope Francis on care for our common home,
-                        ecology, justice, responsibility,
-                        and integral human development.
+                        Important papal documents concerning
+                        doctrine, Church governance,
+                        institutions and ecclesiastical law.
                     </p>
 
                     <a
-                        href="https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html"
+                        href="https://www.vatican.va/offices/papal_docs_list.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Read Laudato Si’
+                        Browse Constitutions
                     </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- APOSTOLIC LETTERS -->
 
-                    <h3>Dilexit Nos</h3>
+                <article
+                    class="card document-card"
+                    data-search="apostolic letters papal letter pope"
+                >
+
+                    <h3>
+                        Apostolic Letters
+                    </h3>
 
                     <p>
-                        Pope Francis on the human and divine love
-                        of the Heart of Jesus Christ.
+                        Papal letters concerning saints,
+                        doctrine, anniversaries,
+                        institutions and pastoral matters.
                     </p>
 
                     <a
-                        href="https://www.vatican.va/content/francesco/en/encyclicals/documents/20241024-enciclica-dilexit-nos.html"
+                        href="https://www.vatican.va/offices/papal_docs_list.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Read Dilexit Nos
+                        Browse Apostolic Letters
                     </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- MOTU PROPRIO -->
 
-                    <h3>Pacem in Terris</h3>
+                <article
+                    class="card document-card"
+                    data-search="motu proprio pope papal legislation law"
+                >
+
+                    <h3>
+                        Motu Proprio
+                    </h3>
 
                     <p>
-                        Pope Saint John XXIII on peace,
-                        truth, justice, charity,
-                        liberty, and human rights.
+                        Papal documents issued on the Pope's
+                        own initiative, frequently concerning
+                        Church law and administration.
                     </p>
 
                     <a
-                        href="https://www.vatican.va/content/john-xxiii/en/encyclicals/documents/hf_j-xxiii_enc_11041963_pacem.html"
+                        href="https://www.vatican.va/offices/papal_docs_list.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hero-button"
                     >
-                        Read Pacem in Terris
+                        Browse Motu Proprio
                     </a>
 
                 </article>
+
+
+                <!-- PAPAL BULLS -->
+
+                <article
+                    class="card document-card"
+                    data-search="papal bulls bull bullae historical papal document"
+                >
+
+                    <h3>
+                        Papal Bulls
+                    </h3>
+
+                    <p>
+                        Solemn historical papal documents.
+                        Available Vatican collections are
+                        organised below by pontificate.
+                    </p>
+
+                    <a
+                        href="#bulls"
+                        class="hero-button"
+                    >
+                        Open Bulls Library
+                    </a>
+
+                </article>
+
+
+                <!-- PAPAL BRIEFS -->
+
+                <article
+                    class="card document-card"
+                    data-search="papal briefs brief breve historical documents"
+                >
+
+                    <h3>
+                        Papal Briefs
+                    </h3>
+
+                    <p>
+                        Shorter formal papal documents,
+                        especially common in earlier
+                        pontificates.
+                    </p>
+
+                    <a
+                        href="#bulls"
+                        class="hero-button"
+                    >
+                        Open Briefs Library
+                    </a>
+
+                </article>
+
+
+                <!-- DECRETALS -->
+
+                <article
+                    class="card document-card"
+                    data-search="decretal letters decrees decretals papal legislation"
+                >
+
+                    <h3>
+                        Decretal and Legislative Documents
+                    </h3>
+
+                    <p>
+                        Formal papal legislative texts may
+                        appear as constitutions, letters,
+                        bulls or Motu Proprio depending
+                        on historical period.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/offices/papal_docs_list.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Search Official Archive
+                    </a>
+
+                </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- ================= SOCIAL TEACHING ================= -->
+        <!-- =================================================
+             POPES
+             ================================================= -->
 
-        <section id="social-teaching">
+        <section id="popes">
 
-            <h2>Catholic Social Teaching</h2>
-
-            <p class="page-introduction">
-                Catholic social teaching applies the Gospel
-                to human dignity, family life, work,
-                economics, politics, peace, justice,
-                solidarity, and care for creation.
+            <p class="section-label">
+                Papal Archives
             </p>
+
+            <h2 class="document-category-heading">
+                Documents by Pope
+            </h2>
+
+            <p class="document-category-description">
+                Open the official Holy See archive
+                for each pontificate.
+            </p>
+
 
             <div class="cards">
 
-                <article class="card">
 
-                    <h3>Human Dignity</h3>
+                <!-- LEO XIV -->
+
+                <article
+                    class="card document-card"
+                    data-search="pope leo xiv leo 14 current pope encyclicals exhortations"
+                >
+
+                    <h3>
+                        Pope Leo XIV
+                    </h3>
 
                     <p>
-                        Every human person is created in the image of God
-                        and possesses an inviolable dignity.
+                        Official documents, homilies,
+                        speeches, messages and other
+                        texts of the current pontificate.
                     </p>
+
+                    <a
+                        href="https://www.vatican.va/content/leo-xiv/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Leo XIV Archive
+                    </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- FRANCIS -->
 
-                    <h3>Common Good</h3>
+                <article
+                    class="card document-card"
+                    data-search="pope francis bergoglio encyclicals exhortations"
+                >
+
+                    <h3>
+                        Pope Francis
+                    </h3>
 
                     <p>
-                        Social conditions should allow persons,
-                        families, and communities to flourish.
+                        Official documents and writings
+                        of Pope Francis.
                     </p>
+
+                    <a
+                        href="https://www.vatican.va/content/francesco/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Francis Archive
+                    </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- BENEDICT XVI -->
 
-                    <h3>Solidarity</h3>
+                <article
+                    class="card document-card"
+                    data-search="pope benedict xvi benedict 16 ratzinger"
+                >
+
+                    <h3>
+                        Pope Benedict XVI
+                    </h3>
 
                     <p>
-                        Human beings are responsible for one another,
-                        especially the poor, excluded, and vulnerable.
+                        Encyclicals, exhortations,
+                        apostolic letters, homilies
+                        and theological teaching.
                     </p>
+
+                    <a
+                        href="https://www.vatican.va/content/benedict-xvi/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Benedict XVI Archive
+                    </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- JOHN PAUL II -->
 
-                    <h3>Subsidiarity</h3>
+                <article
+                    class="card document-card"
+                    data-search="pope john paul ii john paul 2 wojtyla saint"
+                >
+
+                    <h3>
+                        Saint John Paul II
+                    </h3>
 
                     <p>
-                        Decisions should be made at the most appropriate
-                        level while respecting persons and local communities.
+                        Encyclicals, apostolic exhortations,
+                        letters, constitutions,
+                        Motu Proprio and other writings.
                     </p>
+
+                    <a
+                        href="https://www.vatican.va/content/john-paul-ii/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open John Paul II Archive
+                    </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- PAUL VI -->
 
-                    <h3>Care for Creation</h3>
+                <article
+                    class="card document-card"
+                    data-search="pope paul vi paul 6 montini saint"
+                >
+
+                    <h3>
+                        Saint Paul VI
+                    </h3>
 
                     <p>
-                        Creation is a gift entrusted to humanity
-                        and must be protected responsibly.
+                        Official documents of the Pope
+                        who guided Vatican II and
+                        its implementation.
                     </p>
+
+                    <a
+                        href="https://www.vatican.va/content/paul-vi/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Paul VI Archive
+                    </a>
 
                 </article>
 
 
-                <article class="card">
+                <!-- JOHN XXIII -->
 
-                    <h3>Peace and Justice</h3>
+                <article
+                    class="card document-card"
+                    data-search="pope john xxiii john 23 roncalli saint"
+                >
+
+                    <h3>
+                        Saint John XXIII
+                    </h3>
 
                     <p>
-                        Christian disciples are called to promote
-                        reconciliation, justice, mercy, and lasting peace.
+                        Official writings of the Pope
+                        who convoked the Second Vatican Council.
                     </p>
 
+                    <a
+                        href="https://www.vatican.va/content/john-xxiii/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open John XXIII Archive
+                    </a>
+
                 </article>
+
+
+                <!-- PIUS XII -->
+
+                <article
+                    class="card document-card"
+                    data-search="pope pius xii pius 12 pacelli bulls briefs"
+                >
+
+                    <h3>
+                        Pope Pius XII
+                    </h3>
+
+                    <p>
+                        Encyclicals, bulls, briefs,
+                        constitutions, letters
+                        and other documents.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/pius-xii/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Pius XII Archive
+                    </a>
+
+                </article>
+
+
+                <!-- PIUS XI -->
+
+                <article
+                    class="card document-card"
+                    data-search="pope pius xi pius 11 ratti"
+                >
+
+                    <h3>
+                        Pope Pius XI
+                    </h3>
+
+                    <p>
+                        Encyclicals, constitutions,
+                        letters, briefs and other
+                        official texts.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/pius-xi/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Pius XI Archive
+                    </a>
+
+                </article>
+
+
+                <!-- BENEDICT XV -->
+
+                <article
+                    class="card document-card"
+                    data-search="pope benedict xv benedict 15 bulls briefs"
+                >
+
+                    <h3>
+                        Pope Benedict XV
+                    </h3>
+
+                    <p>
+                        Bulls, briefs, encyclicals,
+                        apostolic letters and
+                        other official writings.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/benedict-xv/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Benedict XV Archive
+                    </a>
+
+                </article>
+
+
+                <!-- PIUS X -->
+
+                <article
+                    class="card document-card"
+                    data-search="pope pius x pius 10 sarto saint"
+                >
+
+                    <h3>
+                        Saint Pius X
+                    </h3>
+
+                    <p>
+                        Official papal writings
+                        and legislative documents.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/pius-x/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Pius X Archive
+                    </a>
+
+                </article>
+
+
+                <!-- LEO XIII -->
+
+                <article
+                    class="card document-card"
+                    data-search="pope leo xiii leo 13 pecci bulls briefs rerum novarum"
+                >
+
+                    <h3>
+                        Pope Leo XIII
+                    </h3>
+
+                    <p>
+                        Encyclicals, letters,
+                        bulls, briefs and other
+                        papal writings.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/leo-xiii/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Leo XIII Archive
+                    </a>
+
+                </article>
+
+
+                <!-- COMPLETE LIST -->
+
+                <article
+                    class="card document-card"
+                    data-search="older popes historical pontificates all popes archive"
+                >
+
+                    <h3>
+                        Older Pontificates
+                    </h3>
+
+                    <p>
+                        Use the Vatican's central papal
+                        archive to search documents
+                        from additional pontificates.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/offices/papal_docs_list.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        View Complete Papal Index
+                    </a>
+
+                </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- ================= STUDY GUIDANCE ================= -->
+        <!-- =================================================
+             PAPAL BULLS AND BRIEFS
+             ================================================= -->
 
-        <section id="study-guidance">
+        <section id="bulls">
 
-            <h2>Guidelines for Study</h2>
+            <p class="section-label">
+                Historical Papal Documents
+            </p>
 
-            <ul>
+            <h2 class="document-category-heading">
+                Papal Bulls and Briefs
+            </h2>
 
-                <li>
-                    Begin with prayer and ask the Holy Spirit
-                    for wisdom and understanding.
-                </li>
+            <p class="document-category-description">
+                The Vatican organises many historical
+                Bulls and Briefs according to pontificate.
+            </p>
 
-                <li>
-                    Read the entire section rather than relying
-                    on isolated sentences.
-                </li>
 
-                <li>
-                    Consider the document’s date, purpose,
-                    audience, and historical context.
-                </li>
+            <div class="cards">
 
-                <li>
-                    Use official Church sources whenever possible.
-                </li>
 
-                <li>
-                    Discuss difficult passages with a priest,
-                    catechist, lecturer, or qualified theologian.
-                </li>
+                <!-- LEO XIII BULLS -->
 
-                <li>
-                    Distinguish authoritative Church teaching
-                    from private interpretation or online opinion.
-                </li>
+                <article
+                    class="card document-card"
+                    data-search="leo xiii bulls papal bulls"
+                >
 
-            </ul>
+                    <h3>
+                        Leo XIII — Papal Bulls
+                    </h3>
+
+                    <p>
+                        Official Vatican collection
+                        of papal bulls of Leo XIII.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/leo-xiii/en/bulls.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Bulls
+                    </a>
+
+                </article>
+
+
+                <!-- LEO XIII BRIEFS -->
+
+                <article
+                    class="card document-card"
+                    data-search="leo xiii briefs papal briefs"
+                >
+
+                    <h3>
+                        Leo XIII — Papal Briefs
+                    </h3>
+
+                    <p>
+                        Official Vatican collection
+                        of papal briefs of Leo XIII.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/leo-xiii/en/briefs.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Briefs
+                    </a>
+
+                </article>
+
+
+                <!-- BENEDICT XV BULLS -->
+
+                <article
+                    class="card document-card"
+                    data-search="benedict xv bulls papal bulls"
+                >
+
+                    <h3>
+                        Benedict XV — Papal Bulls
+                    </h3>
+
+                    <p>
+                        Official Vatican collection
+                        of papal bulls of Benedict XV.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/benedict-xv/en/bulls.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Bulls
+                    </a>
+
+                </article>
+
+
+                <!-- BENEDICT XV BRIEFS -->
+
+                <article
+                    class="card document-card"
+                    data-search="benedict xv briefs papal briefs"
+                >
+
+                    <h3>
+                        Benedict XV — Papal Briefs
+                    </h3>
+
+                    <p>
+                        Official Vatican collection
+                        of papal briefs of Benedict XV.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/benedict-xv/en/briefs.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Briefs
+                    </a>
+
+                </article>
+
+
+                <!-- PIUS XII BULLS -->
+
+                <article
+                    class="card document-card"
+                    data-search="pius xii bulls papal bulls"
+                >
+
+                    <h3>
+                        Pius XII — Papal Bulls
+                    </h3>
+
+                    <p>
+                        Official Vatican collection
+                        of papal bulls of Pius XII.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/pius-xii/en/bulls.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Bulls
+                    </a>
+
+                </article>
+
+
+                <!-- PIUS XII BRIEFS -->
+
+                <article
+                    class="card document-card"
+                    data-search="pius xii briefs papal briefs"
+                >
+
+                    <h3>
+                        Pius XII — Papal Briefs
+                    </h3>
+
+                    <p>
+                        Official Vatican collection
+                        of papal briefs of Pius XII.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/pius-xii/en/briefs.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Briefs
+                    </a>
+
+                </article>
+
+
+                <!-- PIUS XI BRIEFS -->
+
+                <article
+                    class="card document-card"
+                    data-search="pius xi briefs papal briefs"
+                >
+
+                    <h3>
+                        Pius XI — Papal Briefs
+                    </h3>
+
+                    <p>
+                        Official Vatican collection
+                        of papal briefs of Pius XI.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/pius-xi/en/briefs.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Briefs
+                    </a>
+
+                </article>
+
+
+                <!-- OLDER PAPAL DOCUMENTS -->
+
+                <article
+                    class="card document-card"
+                    data-search="older bulls briefs historical papal documents"
+                >
+
+                    <h3>
+                        Search Older Papal Documents
+                    </h3>
+
+                    <p>
+                        Some older historical documents
+                        are organised differently.
+                        Use the central Vatican archive
+                        to locate the relevant pontificate.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/offices/papal_docs_list.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Search Papal Archive
+                    </a>
+
+                </article>
+
+
+            </div>
 
         </section>
+
+
+        <!-- =================================================
+             SECOND VATICAN COUNCIL
+             ================================================= -->
+
+        <section id="councils">
+
+            <p class="section-label">
+                Ecumenical Council
+            </p>
+
+            <h2 class="document-category-heading">
+                Second Vatican Council
+            </h2>
+
+            <p class="document-category-description">
+                Access the official constitutions,
+                declarations and decrees of Vatican II.
+            </p>
+
+
+            <div class="cards">
+
+
+                <!-- ALL VATICAN II -->
+
+                <article
+                    class="card document-card"
+                    data-search="vatican ii second vatican council all documents council"
+                >
+
+                    <span class="official-source-label">
+                        Official Vatican
+                    </span>
+
+                    <h3>
+                        Complete Vatican II Archive
+                    </h3>
+
+                    <p>
+                        Access all constitutions,
+                        decrees and declarations
+                        of the Second Vatican Council.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/index.htm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Vatican II Archive
+                    </a>
+
+                </article>
+
+
+                <!-- DEI VERBUM -->
+
+                <article
+                    class="card document-card"
+                    data-search="dei verbum divine revelation scripture tradition vatican ii"
+                >
+
+                    <h3>
+                        Dei Verbum
+                    </h3>
+
+                    <p>
+                        Dogmatic Constitution
+                        on Divine Revelation.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Read Dei Verbum
+                    </a>
+
+                </article>
+
+
+                <!-- LUMEN GENTIUM -->
+
+                <article
+                    class="card document-card"
+                    data-search="lumen gentium church ecclesiology vatican ii"
+                >
+
+                    <h3>
+                        Lumen Gentium
+                    </h3>
+
+                    <p>
+                        Dogmatic Constitution
+                        on the Church.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Read Lumen Gentium
+                    </a>
+
+                </article>
+
+
+                <!-- SACROSANCTUM CONCILIUM -->
+
+                <article
+                    class="card document-card"
+                    data-search="sacrosanctum concilium sacred liturgy worship vatican ii"
+                >
+
+                    <h3>
+                        Sacrosanctum Concilium
+                    </h3>
+
+                    <p>
+                        Constitution
+                        on the Sacred Liturgy.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Read Sacrosanctum Concilium
+                    </a>
+
+                </article>
+
+
+                <!-- GAUDIUM ET SPES -->
+
+                <article
+                    class="card document-card"
+                    data-search="gaudium et spes church modern world vatican ii"
+                >
+
+                    <h3>
+                        Gaudium et Spes
+                    </h3>
+
+                    <p>
+                        Pastoral Constitution
+                        on the Church in the Modern World.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Read Gaudium et Spes
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DOCTRINE AND LAW
+             ================================================= -->
+
+        <section id="doctrine">
+
+            <p class="section-label">
+                Doctrine and Church Law
+            </p>
+
+            <h2 class="document-category-heading">
+                Catechism, Canon Law and Social Doctrine
+            </h2>
+
+            <p class="document-category-description">
+                Major authoritative resources for
+                Catholic doctrine, discipline,
+                morality and social teaching.
+            </p>
+
+
+            <div class="cards">
+
+
+                <!-- CATECHISM -->
+
+                <article
+                    class="card document-card"
+                    data-search="catechism catholic church ccc creed sacraments morality prayer doctrine"
+                >
+
+                    <span class="official-source-label">
+                        Official Vatican
+                    </span>
+
+                    <h3>
+                        Catechism of the Catholic Church
+                    </h3>
+
+                    <p>
+                        The complete Catechism covering
+                        the profession of faith,
+                        sacraments, Christian moral life
+                        and Christian prayer.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/catechism/en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Catechism
+                    </a>
+
+                </article>
+
+
+                <!-- CANON LAW -->
+
+                <article
+                    class="card document-card"
+                    data-search="code canon law catholic latin church cic canons ecclesiastical law"
+                >
+
+                    <span class="official-source-label">
+                        Official Vatican
+                    </span>
+
+                    <h3>
+                        Code of Canon Law
+                    </h3>
+
+                    <p>
+                        The official Code of Canon Law
+                        governing the Latin Church.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/dam/wss/archive/cod-iuris-canonici/cic_index_en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Canon Law
+                    </a>
+
+                </article>
+
+
+                <!-- SOCIAL DOCTRINE -->
+
+                <article
+                    class="card document-card"
+                    data-search="social doctrine catholic social teaching dignity justice peace solidarity subsidiarity common good"
+                >
+
+                    <h3>
+                        Social Doctrine of the Church
+                    </h3>
+
+                    <p>
+                        Catholic teaching concerning
+                        human dignity, family, work,
+                        society, justice, peace,
+                        solidarity and the common good.
+                    </p>
+
+                    <a
+                        href="https://www.vatican.va/content/vatican/en/special/dottrina-sociale-chiesa.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Open Social Doctrine
+                    </a>
+
+                </article>
+
+
+                <!-- COMPENDIUM -->
+
+                <article
+                    class="card document-card"
+                    data-search="compendium social doctrine catholic social teaching"
+                >
+
+                    <h3>
+                        Compendium of the Social Doctrine
+                    </h3>
+
+                    <p>
+                        Read the complete Compendium
+                        of Catholic social teaching.
+                    </p>
+
+                    <a
+                        href="https://press.vatican.va/roman_curia/pontifical_councils/justpeace/documents/rc_pc_justpeace_doc_20060526_compendio-dott-soc_en.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Read the Compendium
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RELATED RESOURCES
+             ================================================= -->
+
+        <section id="resources">
+
+            <p class="section-label">
+                Come, Follow Me Resources
+            </p>
+
+            <h2 class="document-category-heading">
+                Related Catholic Resources
+            </h2>
+
+
+            <div class="cards">
+
+
+                <!-- DOWNLOADS -->
+
+                <article class="card">
+
+                    <h3>
+                        Ministry Downloads
+                    </h3>
+
+                    <p>
+                        Download formation documents,
+                        presentations, audio and
+                        other ministry resources.
+                    </p>
+
+                    <a
+                        href="downloads.html"
+                        class="hero-button"
+                    >
+                        Open Downloads
+                    </a>
+
+                </article>
+
+
+                <!-- FORMATION -->
+
+                <article class="card">
+
+                    <h3>
+                        Formation Centre
+                    </h3>
+
+                    <p>
+                        Continue with Scripture,
+                        Catechism, sacraments,
+                        saints, vocation and formation.
+                    </p>
+
+                    <a
+                        href="formation.html"
+                        class="hero-button"
+                    >
+                        Open Formation
+                    </a>
+
+                </article>
+
+
+                <!-- HYMNS -->
+
+                <article class="card">
+
+                    <h3>
+                        Catholic Hymns &amp; Sacred Music
+                    </h3>
+
+                    <p>
+                        Explore Eucharistic hymns,
+                        Marian hymns, Gregorian chant,
+                        seasonal music and sacred songs.
+                    </p>
+
+                    <a
+                        href="hymns.html"
+                        class="hero-button"
+                    >
+                        Open Hymns &amp; Sacred Music
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- NO RESULTS -->
+
+        <p
+            id="no-document-results"
+            hidden
+        >
+            No document card matches your search.
+            Try another word such as
+            “encyclical”, “John Paul II”,
+            “Vatican II”, “bull” or “Canon Law”.
+        </p>
 
 
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
     <footer>
 
-        <h3>Come, Follow Me</h3>
+        <h3>
+            Come, Follow Me
+        </h3>
 
         <p>
-            A Catholic ministry dedicated to faith, formation,
-            prayer, vocation, and service.
+            Proclaiming Christ through prayer,
+            Scripture, formation and service.
         </p>
+
 
         <div class="social-links">
 
@@ -750,24 +1808,28 @@
                 Home
             </a>
 
-            <a href="scripture.html">
-                Scripture
+            <a href="daily-catholic.html">
+                Today
             </a>
 
-            <a href="catechism.html">
-                Catechism
+            <a href="prayer-center.html">
+                Prayer
             </a>
 
-            <a href="sacraments.html">
-                Sacraments
+            <a href="formation.html">
+                Formation
             </a>
 
-            <a href="homilies.html">
-                Homilies
+            <a href="media.html">
+                Media
+            </a>
+
+            <a href="downloads.html">
+                Downloads
             </a>
 
             <a href="enquiry.html">
-                Enquiries
+                Contact
             </a>
 
             <a href="#top">
@@ -776,15 +1838,118 @@
 
         </div>
 
+
         <p class="copyright">
-            © <span data-current-year>2026</span>
-            Okoli Cosmas Odinaka. All Rights Reserved.
+
+            ©
+            <span data-current-year>
+                2026
+            </span>
+
+            Come, Follow Me Catholic Ministry.
+            All Rights Reserved.
+
         </p>
 
     </footer>
 
 
+    <!-- =====================================================
+         DOCUMENT SEARCH
+         ===================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const searchInput =
+                    document.getElementById(
+                        "church-document-search"
+                    );
+
+                const documentCards =
+                    document.querySelectorAll(
+                        ".document-card"
+                    );
+
+                const noResults =
+                    document.getElementById(
+                        "no-document-results"
+                    );
+
+
+                function searchDocuments() {
+
+                    const searchTerm =
+                        searchInput.value
+                            .toLowerCase()
+                            .trim();
+
+
+                    let visibleCards = 0;
+
+
+                    documentCards.forEach(
+                        function (card) {
+
+                            const cardText =
+                                (
+                                    (card.dataset.search || "") +
+                                    " " +
+                                    card.textContent
+                                )
+                                .toLowerCase();
+
+
+                            const matches =
+                                cardText.includes(
+                                    searchTerm
+                                );
+
+
+                            card.hidden =
+                                !matches;
+
+
+                            if (matches) {
+                                visibleCards++;
+                            }
+
+                        }
+                    );
+
+
+                    if (noResults) {
+
+                        noResults.hidden =
+                            visibleCards !== 0;
+
+                    }
+
+                }
+
+
+                if (searchInput) {
+
+                    searchInput.addEventListener(
+                        "input",
+                        searchDocuments
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+    <!-- Global website JavaScript -->
+
     <script src="script.js"></script>
+
 
 </body>
 

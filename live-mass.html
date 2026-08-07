@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,32 +10,87 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Live Mass Schedule | Come, Follow Me</title>
+    <meta
+        name="description"
+        content="Mass and diocesan information for the Cathedral of the Sacred Heart of Jesus and the Diocese of Alotau-Sideia."
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <title>
+        Alotau Cathedral Mass Information | Come, Follow Me
+    </title>
+
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="logo/Cross.jpg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
+
     <header class="page-hero">
-        <h1>Live Mass Schedule</h1>
+
+        <h1>
+            Alotau Cathedral
+        </h1>
 
         <p>
-            View scheduled Masses, liturgical celebrations,
-            and available livestream links.
+            Cathedral of the Sacred Heart of Jesus
         </p>
 
-        <a href="index.html" class="hero-button">
+        <p>
+            Diocese of Alotau-Sideia,
+            Milne Bay Province, Papua New Guinea
+        </p>
+
+        <a
+            href="index.html"
+            class="hero-button"
+        >
             Return Home
         </a>
+
     </header>
 
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="daily-catholic.html">Today</a>
-        <a href="media.html">Media</a>
-        <a href="enquiry.html">Contact</a>
+    <nav
+        class="main-navigation"
+        aria-label="Main website navigation"
+    >
+
+        <button
+            class="mobile-menu-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            ☰ Menu
+        </button>
+
+        <div
+            class="main-menu"
+            id="main-menu"
+        >
+
+            <a href="index.html">Home</a>
+            <a href="daily-catholic.html">Today</a>
+            <a href="prayer-center.html">Prayer</a>
+            <a href="formation.html">Formation</a>
+            <a href="media.html">Media</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="enquiry.html">Contact</a>
+
+        </div>
+
     </nav>
 
 
@@ -42,36 +98,63 @@
 
         <section>
 
-            <h2>Current Schedule</h2>
-
-            <p class="page-introduction">
-                Livestream information will be added here whenever
-                a Mass or liturgical celebration is scheduled.
+            <p class="section-label">
+                Diocese of Alotau-Sideia
             </p>
 
-            <div class="schedule-table-wrapper">
+            <h2>
+                Cathedral Mass Information
+            </h2>
 
-                <table class="schedule-table">
+            <p class="page-introduction">
+                For current Cathedral Mass times,
+                diocesan announcements and official information,
+                use the Diocese of Alotau-Sideia source below.
+            </p>
 
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Celebration</th>
-                            <th>Location</th>
-                            <th>Link</th>
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        <tr>
-                            <td colspan="5">
-                                No livestream has been scheduled yet.
-                            </td>
-                        </tr>
-                    </tbody>
+            <div class="cards">
 
-                </table>
+                <article class="card">
+
+                    <h3>
+                        Diocese of Alotau-Sideia
+                    </h3>
+
+                    <p>
+                        Open the Catholic Bishops Conference
+                        information for the Diocese of Alotau-Sideia.
+                    </p>
+
+                    <a
+                        href="#"
+                        data-live-link="alotau-diocese"
+                        class="hero-button"
+                    >
+                        Open Official Diocese Information
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>
+                        Sacred Heart of Jesus Cathedral
+                    </h3>
+
+                    <p>
+                        Cathedral Church of the Catholic
+                        Diocese of Alotau-Sideia in Alotau.
+                    </p>
+
+                    <p>
+                        Current Mass times should always be
+                        confirmed through the Cathedral or Diocese,
+                        especially for feasts and special celebrations.
+                    </p>
+
+                </article>
 
             </div>
 
@@ -81,15 +164,33 @@
 
 
     <footer>
+
         <h3>Come, Follow Me</h3>
 
         <div class="social-links">
-            <a href="index.html">Home</a>
-            <a href="media.html">Media</a>
-            <a href="enquiry.html">Contact</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="media.html">
+                Media
+            </a>
+
+            <a href="daily-catholic.html">
+                Today
+            </a>
+
+            <a href="enquiry.html">
+                Contact
+            </a>
+
         </div>
+
     </footer>
 
+
+    <script src="live-catholic.js"></script>
     <script src="script.js"></script>
 
 </body>

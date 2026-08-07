@@ -1009,4 +1009,57 @@ function initialiseMobileNavigation() {
 
     });
 
-}
+}/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton =
+        document.querySelector(".mobile-menu-button");
+
+    const mainMenu =
+        document.querySelector(".main-menu");
+
+    if (!menuButton || !mainMenu) {
+        return;
+    }
+
+    menuButton.addEventListener("click", function () {
+
+        const menuIsOpen =
+            mainMenu.classList.toggle("is-open");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            menuIsOpen
+        );
+
+        menuButton.textContent =
+            menuIsOpen ? "✕ Close" : "☰ Menu";
+
+    });
+
+
+    mainMenu.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (window.innerWidth <= 760) {
+
+                mainMenu.classList.remove("is-open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuButton.textContent = "☰ Menu";
+
+            }
+
+        });
+
+    });
+
+});

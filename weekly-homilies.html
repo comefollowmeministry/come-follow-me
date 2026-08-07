@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,7 +10,14 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Weekly Homilies | Come, Follow Me</title>
+    <meta
+        name="description"
+        content="Daily Catholic Gospel reflections, Sunday homilies, feast-day reflections, and pastoral explanations of Sacred Scripture."
+    >
+
+    <title>
+        Homilies and Reflections | Come, Follow Me Catholic Ministry
+    </title>
 
     <link
         rel="icon"
@@ -17,80 +25,523 @@
         href="logo/Cross.jpg"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <header class="page-hero">
-        <h1>Weekly Homilies</h1>
 
-        <p>
-            Sunday homilies, feast-day reflections,
-            and pastoral explanations of Sacred Scripture.
-        </p>
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-        <a href="formation.html" class="hero-button">
-            Return to Formation
-        </a>
+    <header id="top">
+
+        <div class="hero">
+
+            <img
+                src="logo/Cross.jpg"
+                alt="Cross symbol of Come, Follow Me Catholic Ministry"
+                class="logo"
+            >
+
+            <h1>Homilies and Reflections</h1>
+
+            <p class="verse">
+                “The words that I have spoken to you
+                are spirit and life.”
+            </p>
+
+            <p class="subtitle">
+                John 6:63
+            </p>
+
+            <p>
+                Sunday homilies, feast-day reflections,
+                and pastoral explanations of Sacred Scripture.
+            </p>
+
+            <a
+                href="formation.html"
+                class="hero-button"
+            >
+                Return to Formation
+            </a>
+
+        </div>
+
     </header>
 
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="formation.html">Formation</a>
-        <a href="retreat-talks.html">Retreat Talks</a>
-        <a href="downloads.html">Downloads</a>
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <nav
+        class="main-navigation"
+        aria-label="Main website navigation"
+    >
+
+        <button
+            class="mobile-menu-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            ☰ Menu
+        </button>
+
+
+        <div
+            class="main-menu"
+            id="main-menu"
+        >
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="daily-catholic.html">
+                Today
+            </a>
+
+            <a href="prayer-center.html">
+                Prayer
+            </a>
+
+            <a href="formation.html">
+                Formation
+            </a>
+
+            <a href="media.html">
+                Media
+            </a>
+
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="enquiry.html">
+                Contact
+            </a>
+
+        </div>
+
     </nav>
 
 
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
     <main>
 
-        <section>
 
-            <h2>Latest Homilies</h2>
+        <!-- =================================================
+             LIVE DAILY REFLECTION
+             ================================================= -->
+
+        <section id="daily-reflection">
+
+            <p class="section-label">
+                Live Catholic Reflection
+            </p>
+
+            <h2>
+                Today's Gospel and Reflection
+            </h2>
 
             <p class="page-introduction">
-                Homilies will be added here as they become available.
-                Downloadable versions may also be placed in the Download Library.
+                The Gospel and Catholic reflection are provided
+                through Vatican News and change automatically
+                according to the current day.
             </p>
+
+
+            <p class="text-center">
+
+                <strong>Today:</strong>
+
+                <span data-live-date>
+                    Loading today's date...
+                </span>
+
+            </p>
+
 
             <div class="cards">
 
+
+                <!-- DAILY GOSPEL REFLECTION -->
+
                 <article class="card">
-                    <h3>Corpus Christi Reflection</h3>
+
+                    <h3>
+                        Today's Gospel Reflection
+                    </h3>
 
                     <p>
-                        A reflection on Christ as the Bread of Life
-                        and the meaning of the Holy Eucharist.
+                        Read today's Scripture and Gospel commentary
+                        from Vatican News.
+                    </p>
+
+                    <a
+                        href="#"
+                        data-live-link="vatican-word"
+                        class="hero-button"
+                    >
+                        Read Today's Reflection
+                    </a>
+
+                </article>
+
+
+                <!-- DAILY MASS READINGS -->
+
+                <article class="card">
+
+                    <h3>
+                        Today's Mass Readings
+                    </h3>
+
+                    <p>
+                        Read the Scripture passages appointed
+                        for today's Catholic Mass.
+                    </p>
+
+                    <a
+                        href="https://universalis.com/mass.htm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hero-button"
+                    >
+                        Read Today's Mass Readings
+                    </a>
+
+                </article>
+
+
+                <!-- SAINT OF THE DAY -->
+
+                <article class="card">
+
+                    <h3>
+                        Saint of the Day
+                    </h3>
+
+                    <p>
+                        Discover the saints remembered by the Church
+                        today and learn from their witness.
+                    </p>
+
+                    <a
+                        href="#"
+                        data-live-link="vatican-saint"
+                        class="hero-button"
+                    >
+                        Meet Today's Saints
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HOMILY ARCHIVE
+             ================================================= -->
+
+        <section id="homily-archive">
+
+            <p class="section-label">
+                Homily Library
+            </p>
+
+            <h2>
+                Sunday and Feast-Day Homilies
+            </h2>
+
+            <p class="page-introduction">
+                Browse homilies and reflections prepared
+                specifically for this ministry.
+            </p>
+
+
+            <div class="cards">
+
+
+                <!-- HOMILY ARCHIVE -->
+
+                <article class="card">
+
+                    <h3>
+                        Our Homily Archive
+                    </h3>
+
+                    <p>
+                        Read previously prepared homilies,
+                        Sunday reflections, feast-day messages,
+                        and pastoral reflections.
+                    </p>
+
+                    <a
+                        href="homilies.html"
+                        class="hero-button"
+                    >
+                        View Homily Archive
+                    </a>
+
+                </article>
+
+
+                <!-- DOWNLOADABLE HOMILIES -->
+
+                <article class="card">
+
+                    <h3>
+                        Downloadable Reflections
+                    </h3>
+
+                    <p>
+                        Access available PDF, Word,
+                        and other formation documents
+                        from the Downloads library.
                     </p>
 
                     <a
                         href="downloads.html"
                         class="hero-button"
                     >
-                        View Available Document
+                        Browse Downloads
                     </a>
+
                 </article>
+
+
+                <!-- SCRIPTURE -->
+
+                <article class="card">
+
+                    <h3>
+                        Scripture Centre
+                    </h3>
+
+                    <p>
+                        Continue studying Sacred Scripture
+                        and learn methods of prayerful
+                        Catholic Bible reading.
+                    </p>
+
+                    <a
+                        href="scripture.html"
+                        class="hero-button"
+                    >
+                        Explore Scripture
+                    </a>
+
+                </article>
+
 
             </div>
 
         </section>
 
+
+        <!-- =================================================
+             PRAY WITH THE WORD
+             ================================================= -->
+
+        <section id="pray-with-word">
+
+            <p class="section-label">
+                Prayer and Scripture
+            </p>
+
+            <h2>
+                Pray with the Word of God
+            </h2>
+
+            <p class="page-introduction">
+                A homily should lead beyond explanation
+                into prayer, conversion, and Christian action.
+            </p>
+
+
+            <blockquote>
+
+                “Be doers of the word,
+                and not merely hearers.”
+
+                <br><br>
+
+                <strong>
+                    James 1:22
+                </strong>
+
+            </blockquote>
+
+
+            <div class="cards">
+
+
+                <article class="card">
+
+                    <h3>
+                        Lectio Divina
+                    </h3>
+
+                    <p>
+                        Read, meditate, pray,
+                        contemplate, and respond
+                        to the Word of God.
+                    </p>
+
+                    <a
+                        href="scripture.html"
+                        class="hero-button"
+                    >
+                        Begin Lectio Divina
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>
+                        Daily Catholic Life
+                    </h3>
+
+                    <p>
+                        Access today's readings,
+                        Gospel reflection, saints,
+                        prayer, and Divine Office.
+                    </p>
+
+                    <a
+                        href="daily-catholic.html"
+                        class="hero-button"
+                    >
+                        Open Today in the Church
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>
+                        Formation Centre
+                    </h3>
+
+                    <p>
+                        Continue with Catholic doctrine,
+                        Scripture, retreats, sacraments,
+                        saints, and formation resources.
+                    </p>
+
+                    <a
+                        href="formation.html"
+                        class="hero-button"
+                    >
+                        Return to Formation
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
     </main>
 
 
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
     <footer>
-        <h3>Come, Follow Me</h3>
+
+        <h3>
+            Come, Follow Me
+        </h3>
+
+        <p>
+            Proclaiming Christ through prayer,
+            Scripture, formation, and service.
+        </p>
+
 
         <div class="social-links">
-            <a href="index.html">Home</a>
-            <a href="formation.html">Formation</a>
-            <a href="downloads.html">Downloads</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="daily-catholic.html">
+                Today
+            </a>
+
+            <a href="prayer-center.html">
+                Prayer
+            </a>
+
+            <a href="formation.html">
+                Formation
+            </a>
+
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="enquiry.html">
+                Contact
+            </a>
+
+            <a href="#top">
+                Back to Top
+            </a>
+
         </div>
+
+
+        <p class="copyright">
+
+            ©
+            <span data-current-year>
+                2026
+            </span>
+
+            Come, Follow Me Catholic Ministry.
+            All Rights Reserved.
+
+        </p>
+
     </footer>
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="live-catholic.js"></script>
+
     <script src="script.js"></script>
+
 
 </body>
 

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Catholic Hymn Book with written hymns for Holy Mass, Eucharistic adoration, Marian devotion, Advent, Christmas, Lent, Easter, Pentecost, vocations and Catholic prayer."
+    >
+
+    <title>
+        Catholic Hymn Book | Come, Follow Me
+    </title>
+
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="logo/Cross.jpg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        .hymn-introduction {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+
+        .hymn-search {
+            max-width: 820px;
+            margin: 30px auto;
+        }
+
+
+        .hymn-search label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+
+        .hymn-search input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px 18px;
+            border: 1px solid #777;
+            border-radius: 12px;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+        }
+
+
+        .hymn-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px auto;
+        }
+
+
+        .hymn-controls button,
+        .hymn-category-button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 24px;
+            background: #0877d1;
+            color: white;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+
+        .hymn-controls button:hover,
+        .hymn-category-button:hover,
+        .hymn-category-button.active {
+            background: #055b9f;
+        }
+
+
+        .hymn-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 1100px;
+            margin: 30px auto 50px;
+        }
+
+
+        .hymn-results {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+
+        .written-hymn {
+            margin: 16px 0;
+            overflow: hidden;
+            border: 1px solid rgba(120, 120, 120, 0.35);
+            border-radius: 14px;
+        }
+
+
+        .written-hymn summary {
+            padding: 18px 22px;
+            cursor: pointer;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+
+        .written-hymn summary:hover {
+            background: rgba(8, 119, 209, 0.08);
+        }
+
+
+        .written-hymn[open] summary {
+            border-bottom:
+                1px solid rgba(120, 120, 120, 0.25);
+        }
+
+
+        .hymn-lyrics {
+            padding: 18px 28px 30px;
+            font-size: 1.22rem;
+            line-height: 1.9;
+        }
+
+
+        .hymn-lyrics p {
+            margin: 20px 0;
+        }
+
+
+        .hymn-information {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+
+        .hymn-label {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: rgba(8, 119, 209, 0.12);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+
+        #no-hymns {
+            max-width: 700px;
+            margin: 30px auto;
+            text-align: center;
+            font-weight: 700;
+        }
+
+
+        .hymn-note {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 22px;
+            border-left: 5px solid #0877d1;
+            border-radius: 12px;
+            background: rgba(8, 119, 209, 0.08);
+        }
+
+
+        @media (max-width: 650px) {
+
+            .hymn-categories {
+                flex-direction: column;
+            }
+
+
+            .hymn-category-button {
+                width: 100%;
+            }
+
+
+            .hymn-lyrics {
+                padding: 15px 18px 25px;
+                font-size: 1.08rem;
+            }
+
+        }
+
+
+        @media print {
+
+            nav,
+            footer,
+            .hymn-search,
+            .hymn-controls,
+            .hymn-categories,
+            .hero-button {
+                display: none !important;
+            }
+
+
+            .written-hymn {
+                border: none;
+            }
+
+
+            .hymn-lyrics {
+                color: black;
+                font-size: 14pt;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header id="top">
+
+        <div class="hero">
+
+            <img
+                src="logo/Cross.jpg"
+                alt="Come, Follow Me Catholic Ministry"
+                class="logo"
+            >
+
+            <h1>
+                Catholic Hymn Book
+            </h1>
+
+            <p class="verse">
+                “Sing to the Lord a new song.”
+            </p>
+
+            <p class="subtitle">
+                Psalm 96:1
+            </p>
+
+            <p>
+                Open a hymn and sing together
+                during Mass, prayer and community worship.
+            </p>
+
+            <a
+                href="#hymn-library"
+                class="hero-button"
+            >
+                Open Hymn Book
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav
+        class="main-navigation"
+        aria-label="Main website navigation"
+    >
+
+        <button
+            class="mobile-menu-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            ☰ Menu
+        </button>
+
+
+        <div
+            class="main-menu"
+            id="main-menu"
+        >
+
+            <a href="index.html">Home</a>
+
+            <a href="daily-catholic.html">
+                Today
+            </a>
+
+            <a href="prayer-center.html">
+                Prayer
+            </a>
+
+            <a href="formation.html">
+                Formation
+            </a>
+
+            <a href="media.html">
+                Media
+            </a>
+
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="enquiry.html">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main id="hymn-library">
+
+
+        <section>
+
+
+            <div class="hymn-introduction">
+
+                <p class="section-label">
+                    Sacred Music
+                </p>
+
+                <h2>
+                    Written Catholic Hymns
+                </h2>
+
+                <p class="page-introduction">
+                    Click any hymn title to open its words.
+                    You can enlarge the text so that a group
+                    or congregation can sing from the screen.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="hymn-search">
+
+                <label for="hymn-search-input">
+                    Search the Hymn Book
+                </label>
+
+                <input
+                    type="search"
+                    id="hymn-search-input"
+                    placeholder="Search hymn title, Eucharist, Mary, Advent..."
+                >
+
+            </div>
+
+
+            <!-- CONTROLS -->
+
+            <div class="hymn-controls">
+
+                <button
+                    type="button"
+                    id="larger-text"
+                >
+                    A+ Larger Text
+                </button>
+
+                <button
+                    type="button"
+                    id="smaller-text"
+                >
+                    A− Smaller Text
+                </button>
+
+                <button
+                    type="button"
+                    id="open-all"
+                >
+                    Open All
+                </button>
+
+                <button
+                    type="button"
+                    id="close-all"
+                >
+                    Close All
+                </button>
+
+                <button
+                    type="button"
+                    id="print-hymns"
+                >
+                    Print
+                </button>
+
+            </div>
+
+
+            <!-- CATEGORIES GENERATED BY JAVASCRIPT -->
+
+            <div
+                id="hymn-categories"
+                class="hymn-categories"
+            ></div>
+
+
+            <!-- HYMNS GENERATED BY JAVASCRIPT -->
+
+            <div
+                id="hymn-results"
+                class="hymn-results"
+            ></div>
+
+
+            <p
+                id="no-hymns"
+                hidden
+            >
+                No hymn matches your search.
+            </p>
+
+
+            <div class="hymn-note">
+
+                <strong>
+                    Catholic Hymn Book:
+                </strong>
+
+                This digital hymn book is designed for
+                communal prayer and singing. More authorised
+                hymn texts can be added gradually without
+                rebuilding this page.
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>
+            Come, Follow Me
+        </h3>
+
+        <p>
+            Proclaiming Christ through prayer,
+            Scripture, formation and service.
+        </p>
+
+
+        <div class="social-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="prayer-center.html">
+                Prayer
+            </a>
+
+            <a href="formation.html">
+                Formation
+            </a>
+
+            <a href="media.html">
+                Media
+            </a>
+
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="#top">
+                Back to Top
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+
+            ©
+            <span data-current-year>
+                2026
+            </span>
+
+            Come, Follow Me Catholic Ministry.
+            All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+
+    <!-- HYMN CONTENT -->
+
+    <script src="hymns-data.js"></script>
+
+
+    <!-- HYMN FUNCTIONS -->
+
+    <script src="hymns.js"></script>
+
+
+    <!-- GLOBAL WEBSITE -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

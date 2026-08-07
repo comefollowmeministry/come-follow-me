@@ -79,89 +79,56 @@
 
     <!-- ================= MAIN NAVIGATION ================= -->
 
-    <nav aria-label="Main website navigation">
+    <!-- ================= MAIN NAVIGATION ================= -->
 
-        <a href="#home">
+<nav class="main-navigation" aria-label="Main website navigation">
+
+    <button
+        class="mobile-menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-menu"
+    >
+        ☰ Menu
+    </button>
+
+    <div class="main-menu" id="main-menu">
+
+        <a href="index.html">
             Home
-        </a>
-
-        <a href="search.html">
-            Search
         </a>
 
         <a href="daily-catholic.html">
             Today
         </a>
 
-        <a href="#mission">
-            Mission
+        <a href="prayer-center.html">
+            Prayer
         </a>
 
-        <a href="#formation">
+        <a href="formation.html">
             Formation
         </a>
 
-        <a href="scripture.html">
-            Scripture
-        </a>
-
-        <a href="prayer-center.html">
-            Prayer Center
+        <a href="media.html">
+            Media
         </a>
 
         <a href="downloads.html">
             Downloads
         </a>
 
-        <a href="prayer-request.html">
-             Prayer Requests
-        </a>
-
-        <a href="vocation.html">
-            Vocation
-        </a>
-
-        <a href="catechism.html">
-            Catechism
-        </a>
-
-        <a href="catholic-documents.html">
-            Church Documents
-        </a>
-
-        <a href="sacraments.html">
-            Sacraments
-        </a>
-
-        <a href="saints.html">
-            Saints
-        </a>
-
-        <a href="liturgical-calendar.html">
-            Church Calendar
-        </a>
-
-        <a href="#reflections">
-            Reflections
-        </a>
-
-        <a href="homilies.html">
-            Homilies
-        </a>
-        
-        <a href="sacred-images.html">
-            Sacred Images
-        </a>
-
-        <a href="#gallery">
+        <a href="gallery.html">
             Gallery
         </a>
 
         <a href="enquiry.html">
-            Enquiries
+            Contact
         </a>
 
-    </nav>
+    </div>
+
+</nav>
     <section class="site-search-section">
 
     <div class="site-search" data-site-search>
@@ -984,250 +951,139 @@
         </section>
 
 
-        <!-- ================= GALLERY ================= -->
+        <!-- ================= FEATURED GALLERY ================= -->
 
-        <section id="gallery">
+<section id="gallery" class="home-gallery-section">
 
-            <h2>Mission and Community Gallery</h2>
+    <div class="section-heading">
 
-            <p class="page-introduction">
-                Selected moments from formation, pastoral ministry,
-                ordination celebrations, and community life.
-            </p>
+        <p class="section-label">
+            Life and Mission
+        </p>
 
-            <div class="gallery">
+        <h2>Mission and Community Gallery</h2>
 
+        <p>
+            Selected moments from seminary formation,
+            pastoral ministry, ordination celebrations,
+            and community life.
+        </p>
 
-                <!-- Seminary Formation -->
-
-                <img
-                    src="gallery/Seminary.jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (2).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (3).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (4).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (5).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (6).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (7).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (8).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (9).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (10).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (11).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (12).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (13).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (14).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (15).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (16).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (17).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (18).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (19).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (20).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Seminary (21).jpg"
-                    alt="Seminary formation activity"
-                    loading="lazy"
-                >
+    </div>
 
 
-                <!-- Pastoral Ministry -->
+    <div class="home-gallery-grid">
 
-                <img
-                    src="gallery/Pastoral.jpg"
-                    alt="Pastoral ministry activity"
-                    loading="lazy"
-                >
+        <a
+            href="gallery.html"
+            class="home-gallery-item"
+        >
+            <img
+                src="gallery/Seminary.jpg"
+                alt="Seminary formation"
+                loading="lazy"
+            >
 
-                <img
-                    src="gallery/Pastoral (2).jpg"
-                    alt="Pastoral ministry activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Pastoral (3).jpg"
-                    alt="Pastoral ministry activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Pastoral (4).jpg"
-                    alt="Pastoral ministry activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Pastoral (5).jpg"
-                    alt="Pastoral ministry activity"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Pastoral (6).jpg"
-                    alt="Pastoral ministry activity"
-                    loading="lazy"
-                >
+            <span>
+                Seminary Formation
+            </span>
+        </a>
 
 
-                <!-- Ordination -->
+        <a
+            href="gallery.html"
+            class="home-gallery-item"
+        >
+            <img
+                src="gallery/Seminary (5).jpg"
+                alt="Seminary community formation"
+                loading="lazy"
+            >
 
-                <img
-                    src="gallery/Ordination.jpg"
-                    alt="Catholic ordination celebration"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Ordination (2).jpg"
-                    alt="Catholic ordination celebration"
-                    loading="lazy"
-                >
-
-                <img
-                    src="gallery/Ordination (3).jpg"
-                    alt="Catholic ordination celebration"
-                    loading="lazy"
-                >
+            <span>
+                Formation Life
+            </span>
+        </a>
 
 
-                <!-- Community Life -->
+        <a
+            href="gallery.html"
+            class="home-gallery-item"
+        >
+            <img
+                src="gallery/Pastoral.jpg"
+                alt="Pastoral ministry"
+                loading="lazy"
+            >
 
-                <img
-                    src="gallery/Community.jpg"
-                    alt="Catholic community life"
-                    loading="lazy"
-                >
+            <span>
+                Pastoral Ministry
+            </span>
+        </a>
 
-                <img
-                    src="gallery/Community (2).jpg"
-                    alt="Catholic community life"
-                    loading="lazy"
-                >
 
-                <img
-                    src="gallery/Community (3).jpg"
-                    alt="Catholic community life"
-                    loading="lazy"
-                >
+        <a
+            href="gallery.html"
+            class="home-gallery-item"
+        >
+            <img
+                src="gallery/Pastoral (4).jpg"
+                alt="Catholic pastoral activity"
+                loading="lazy"
+            >
 
-                <img
-                    src="gallery/Community (4).jpg"
-                    alt="Catholic community life"
-                    loading="lazy"
-                >
+            <span>
+                Mission and Service
+            </span>
+        </a>
 
-                <img
-                    src="gallery/Community (5).jpg"
-                    alt="Catholic community life"
-                    loading="lazy"
-                >
 
-                <img
-                    src="gallery/Community (6).jpg"
-                    alt="Catholic community life"
-                    loading="lazy"
-                >
+        <a
+            href="gallery.html"
+            class="home-gallery-item"
+        >
+            <img
+                src="gallery/Ordination.jpg"
+                alt="Catholic ordination celebration"
+                loading="lazy"
+            >
 
-            </div>
+            <span>
+                Ordination
+            </span>
+        </a>
 
-        </section>
+
+        <a
+            href="gallery.html"
+            class="home-gallery-item"
+        >
+            <img
+                src="gallery/Community.jpg"
+                alt="Catholic community life"
+                loading="lazy"
+            >
+
+            <span>
+                Community Life
+            </span>
+        </a>
+
+    </div>
+
+
+    <div class="gallery-button-container">
+
+        <a
+            href="gallery.html"
+            class="hero-button"
+        >
+            View Full Gallery
+        </a>
+
+    </div>
+
+</section>
 
 
         <!-- ================= CONTACT ================= -->
