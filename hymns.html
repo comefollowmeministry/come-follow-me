@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -12,7 +11,7 @@
 
     <meta
         name="description"
-        content="Catholic Hymn Book with written hymns for Holy Mass, Eucharistic adoration, Marian devotion, Advent, Christmas, Lent, Easter, Pentecost, vocations and Catholic prayer."
+        content="Catholic Hymn Book with written hymns in English, Tok Pisin, Latin and Dinka for Holy Mass, Eucharistic adoration, Marian devotion, Advent, Christmas, Lent, Easter, Pentecost, Ordinary Time and Catholic prayer."
     >
 
     <title>
@@ -29,7 +28,6 @@
         rel="stylesheet"
         href="style.css"
     >
-
 
     <style>
 
@@ -70,17 +68,41 @@
         }
 
 
-        .hymn-controls {
+        .hymn-filter-panel {
+            max-width: 1100px;
+            margin: 28px auto 12px;
+            padding: 22px;
+            border: 1px solid rgba(120, 120, 120, 0.35);
+            border-radius: 16px;
+            background: rgba(8, 119, 209, 0.04);
+        }
+
+
+        .hymn-filter-title {
+            margin: 0 0 12px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+
+        .hymn-languages,
+        .hymn-categories {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 25px auto;
         }
 
 
-        .hymn-controls button,
-        .hymn-category-button {
+        .hymn-languages {
+            margin-bottom: 24px;
+        }
+
+
+        .hymn-language-button,
+        .hymn-category-button,
+        .hymn-controls button {
             padding: 10px 16px;
             border: none;
             border-radius: 24px;
@@ -92,20 +114,40 @@
         }
 
 
-        .hymn-controls button:hover,
+        .hymn-language-button:hover,
         .hymn-category-button:hover,
+        .hymn-controls button:hover,
+        .hymn-language-button.active,
         .hymn-category-button.active {
             background: #055b9f;
         }
 
 
-        .hymn-categories {
+        .hymn-language-button[aria-pressed="true"],
+        .hymn-category-button[aria-pressed="true"] {
+            background: #055b9f;
+            box-shadow: 0 0 0 3px rgba(8, 119, 209, 0.18);
+        }
+
+
+        .hymn-controls {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
-            max-width: 1100px;
-            margin: 30px auto 50px;
+            margin: 25px auto;
+        }
+
+
+        .hymn-status {
+            max-width: 920px;
+            margin: 18px auto 28px;
+            text-align: center;
+        }
+
+
+        .hymn-status strong {
+            font-weight: 800;
         }
 
 
@@ -192,11 +234,18 @@
 
         @media (max-width: 650px) {
 
+            .hymn-filter-panel {
+                padding: 16px;
+            }
+
+
+            .hymn-languages,
             .hymn-categories {
                 flex-direction: column;
             }
 
 
+            .hymn-language-button,
             .hymn-category-button {
                 width: 100%;
             }
@@ -215,8 +264,9 @@
             nav,
             footer,
             .hymn-search,
+            .hymn-filter-panel,
             .hymn-controls,
-            .hymn-categories,
+            .hymn-status,
             .hero-button {
                 display: none !important;
             }
@@ -272,7 +322,7 @@
             </p>
 
             <a
-                href="#hymn-library"
+                href="#hymn-results"
                 class="hero-button"
             >
                 Open Hymn Book
@@ -305,7 +355,9 @@
             id="main-menu"
         >
 
-            <a href="index.html">Home</a>
+            <a href="index.html">
+                Home
+            </a>
 
             <a href="daily-catholic.html">
                 Today
@@ -359,7 +411,8 @@
                 </h2>
 
                 <p class="page-introduction">
-                    Click any hymn title to open its words.
+                    Choose a language and liturgical season,
+                    then click any hymn title to open its words.
                     You can enlarge the text so that a group
                     or congregation can sing from the screen.
                 </p>
@@ -367,7 +420,7 @@
             </div>
 
 
-            <!-- SEARCH -->
+            <!-- ================= SEARCH ================= -->
 
             <div class="hymn-search">
 
@@ -378,15 +431,266 @@
                 <input
                     type="search"
                     id="hymn-search-input"
-                    placeholder="Search hymn title, Eucharist, Mary, Advent..."
+                    placeholder="Search title, words, Lent, Easter, Mary, Eucharist..."
+                    autocomplete="off"
                 >
 
             </div>
 
 
-            <!-- CONTROLS -->
+            <!-- ================= FILTER PANEL ================= -->
+
+            <div class="hymn-filter-panel">
+
+
+                <!-- LANGUAGE -->
+
+                <p class="hymn-filter-title">
+                    Choose Language
+                </p>
+
+
+                <div
+                    id="hymn-languages"
+                    class="hymn-languages"
+                    aria-label="Choose hymn language"
+                >
+
+                    <button
+                        type="button"
+                        class="hymn-language-button active"
+                        data-language="English"
+                        aria-pressed="true"
+                    >
+                        English
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-language-button"
+                        data-language="Tok Pisin"
+                        aria-pressed="false"
+                    >
+                        Tok Pisin
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-language-button"
+                        data-language="Latin"
+                        aria-pressed="false"
+                    >
+                        Latin
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-language-button"
+                        data-language="Dinka"
+                        aria-pressed="false"
+                    >
+                        Dinka
+                    </button>
+
+                </div>
+
+
+                <!-- LITURGICAL SEASONS -->
+
+                <p class="hymn-filter-title">
+                    Liturgical Seasons &amp; Themes
+                </p>
+
+
+                <div
+                    id="hymn-categories"
+                    class="hymn-categories"
+                    aria-label="Choose hymn season or theme"
+                >
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button active"
+                        data-category="all"
+                        aria-pressed="true"
+                    >
+                        All Hymns
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="advent"
+                        aria-pressed="false"
+                    >
+                        Advent
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="christmas"
+                        aria-pressed="false"
+                    >
+                        Christmas
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="epiphany"
+                        aria-pressed="false"
+                    >
+                        Epiphany
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="lent"
+                        aria-pressed="false"
+                    >
+                        Lent
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="holy-week"
+                        aria-pressed="false"
+                    >
+                        Holy Week
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="easter"
+                        aria-pressed="false"
+                    >
+                        Easter
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="ascension"
+                        aria-pressed="false"
+                    >
+                        Ascension
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="pentecost"
+                        aria-pressed="false"
+                    >
+                        Pentecost
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="trinity"
+                        aria-pressed="false"
+                    >
+                        Trinity
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="corpus-christi"
+                        aria-pressed="false"
+                    >
+                        Corpus Christi
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="sacred-heart"
+                        aria-pressed="false"
+                    >
+                        Sacred Heart
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="marian"
+                        aria-pressed="false"
+                    >
+                        Marian Hymns
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="saints"
+                        aria-pressed="false"
+                    >
+                        Saints
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="holy-souls"
+                        aria-pressed="false"
+                    >
+                        Holy Souls
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="ordinary-time"
+                        aria-pressed="false"
+                    >
+                        Ordinary Time
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hymn-category-button"
+                        data-category="other"
+                        aria-pressed="false"
+                    >
+                        Other
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= READING CONTROLS ================= -->
 
             <div class="hymn-controls">
+
 
                 <button
                     type="button"
@@ -395,12 +699,14 @@
                     A+ Larger Text
                 </button>
 
+
                 <button
                     type="button"
                     id="smaller-text"
                 >
                     A− Smaller Text
                 </button>
+
 
                 <button
                     type="button"
@@ -409,12 +715,14 @@
                     Open All
                 </button>
 
+
                 <button
                     type="button"
                     id="close-all"
                 >
                     Close All
                 </button>
+
 
                 <button
                     type="button"
@@ -423,18 +731,22 @@
                     Print
                 </button>
 
+
             </div>
 
 
-            <!-- CATEGORIES GENERATED BY JAVASCRIPT -->
+            <!-- ================= CURRENT SELECTION ================= -->
 
             <div
-                id="hymn-categories"
-                class="hymn-categories"
-            ></div>
+                id="hymn-status"
+                class="hymn-status"
+                aria-live="polite"
+            >
+                <strong>English</strong> — All Hymns
+            </div>
 
 
-            <!-- HYMNS GENERATED BY JAVASCRIPT -->
+            <!-- ================= HYMN RESULTS ================= -->
 
             <div
                 id="hymn-results"
@@ -446,9 +758,11 @@
                 id="no-hymns"
                 hidden
             >
-                No hymn matches your search.
+                No hymn matches your current search or category.
             </p>
 
+
+            <!-- ================= NOTE ================= -->
 
             <div class="hymn-note">
 
@@ -456,10 +770,10 @@
                     Catholic Hymn Book:
                 </strong>
 
-                This digital hymn book is designed for
-                communal prayer and singing. More authorised
-                hymn texts can be added gradually without
-                rebuilding this page.
+                This digital hymn library brings together
+                English, Tok Pisin, Latin and Dinka hymn
+                collections for prayer, liturgy, formation
+                and community singing.
 
             </div>
 
@@ -528,17 +842,17 @@
     </footer>
 
 
-    <!-- HYMN CONTENT -->
+    <!-- ================= HYMN DATA ================= -->
 
     <script src="hymns-data.js"></script>
 
 
-    <!-- HYMN FUNCTIONS -->
+    <!-- ================= HYMN FUNCTIONS ================= -->
 
     <script src="hymns.js"></script>
 
 
-    <!-- GLOBAL WEBSITE -->
+    <!-- ================= GLOBAL WEBSITE ================= -->
 
     <script src="script.js"></script>
 

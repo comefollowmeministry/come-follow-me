@@ -1,304 +1,1047 @@
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-        const results =
-            document.getElementById(
-                "hymn-results"
-            );
-
-        const categoriesContainer =
-            document.getElementById(
-                "hymn-categories"
-            );
-
-        const searchInput =
-            document.getElementById(
-                "hymn-search-input"
-            );
-
-        const noHymns =
-            document.getElementById(
-                "no-hymns"
-            );
-
-        const largerButton =
-            document.getElementById(
-                "larger-text"
-            );
-
-        const smallerButton =
-            document.getElementById(
-                "smaller-text"
-            );
-
-        const openAllButton =
-            document.getElementById(
-                "open-all"
-            );
-
-        const closeAllButton =
-            document.getElementById(
-                "close-all"
-            );
-
-        const printButton =
-            document.getElementById(
-                "print-hymns"
-            );
+    /* =========================================================
+       COME, FOLLOW ME — MULTILINGUAL CATHOLIC HYMN BOOK
+       English | Tok Pisin | Latin | Dinka
+       ========================================================= */
 
 
-        let selectedCategory =
-            "All";
+    /* ================= PAGE ELEMENTS ================= */
+
+    const results =
+        document.getElementById("hymn-results");
+
+    const searchInput =
+        document.getElementById("hymn-search-input");
+
+    const noHymns =
+        document.getElementById("no-hymns");
+
+    const statusBox =
+        document.getElementById("hymn-status");
+
+    const largerButton =
+        document.getElementById("larger-text");
+
+    const smallerButton =
+        document.getElementById("smaller-text");
+
+    const openAllButton =
+        document.getElementById("open-all");
+
+    const closeAllButton =
+        document.getElementById("close-all");
+
+    const printButton =
+        document.getElementById("print-hymns");
 
 
-        let hymnFontSize =
-            1.22;
+    if (!results || !searchInput) {
+
+        console.error(
+            "Required hymn page elements are missing."
+        );
+
+        return;
+    }
 
 
-        /* ==============================
-           CREATE CATEGORIES
-           ============================== */
+    /* ================= HYMN COLLECTIONS ================= */
 
-        const categories = [
-            "All",
-            ...new Set(
-                catholicHymns.map(
-                    hymn => hymn.category
-                )
+    const hymnCollections = {
+
+        English:
+            typeof catholicHymns !== "undefined"
+                ? catholicHymns
+                : [],
+
+        "Tok Pisin":
+            typeof yumiLotuHymns !== "undefined"
+                ? yumiLotuHymns
+                : [],
+
+        Latin:
+            typeof latinHymns !== "undefined"
+                ? latinHymns
+                : [],
+
+        Dinka:
+            typeof dinkaHymns !== "undefined"
+                ? dinkaHymns
+                : []
+
+    };
+
+
+    /* ================= CURRENT SETTINGS ================= */
+
+    let selectedLanguage = "English";
+
+    let selectedCategory = "all";
+
+    let hymnFontSize = 1.22;
+
+
+    /* ================= CATEGORY NAMES ================= */
+
+    const categoryLabels = {
+
+        all: "All Hymns",
+
+        advent: "Advent",
+
+        christmas: "Christmas",
+
+        epiphany: "Epiphany",
+
+        lent: "Lent",
+
+        "holy-week": "Holy Week",
+
+        easter: "Easter",
+
+        ascension: "Ascension",
+
+        pentecost: "Pentecost",
+
+        trinity: "Trinity",
+
+        "corpus-christi":
+            "Corpus Christi",
+
+        "sacred-heart":
+            "Sacred Heart",
+
+        marian:
+            "Marian Hymns",
+
+        saints:
+            "Saints",
+
+        "holy-souls":
+            "Holy Souls",
+
+        "ordinary-time":
+            "Ordinary Time",
+
+        other:
+            "Other"
+
+    };
+
+
+    /* =========================================================
+       NORMALISE TEXT
+       ========================================================= */
+
+    function normaliseText(value) {
+
+        return String(value || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(
+                /[\u0300-\u036f]/g,
+                ""
             )
-        ];
+            .trim();
+
+    }
 
 
-        categories.forEach(
-            function (category) {
+    function containsAny(text, values) {
 
-                const button =
-                    document.createElement(
-                        "button"
-                    );
+        return values.some(
+            function (value) {
 
+                return text.includes(value);
 
-                button.type =
-                    "button";
+            }
+        );
 
-
-                button.className =
-                    "hymn-category-button";
+    }
 
 
-                button.textContent =
-                    category;
+    /* =========================================================
+       CATEGORY FILTER
+       ========================================================= */
+
+    function categoryMatches(
+        hymn,
+        requestedCategory
+    ) {
+
+        if (requestedCategory === "all") {
+
+            return true;
+
+        }
 
 
-                if (category === "All") {
+        const category =
+            normaliseText(
+                hymn.category
+            );
 
-                    button.classList.add(
-                        "active"
+
+        /* ADVENT */
+
+        if (
+            requestedCategory ===
+            "advent"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "advent",
+                    "atven"
+                ]
+            );
+
+        }
+
+
+        /* CHRISTMAS */
+
+        if (
+            requestedCategory ===
+            "christmas"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "christmas",
+                    "krismas",
+                    "nativity"
+                ]
+            );
+
+        }
+
+
+        /* EPIPHANY */
+
+        if (
+            requestedCategory ===
+            "epiphany"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "epiphany",
+                    "epifani"
+                ]
+            );
+
+        }
+
+
+        /* LENT */
+
+        if (
+            requestedCategory ===
+            "lent"
+        ) {
+
+            return (
+                category === "lent" ||
+                category === "len" ||
+                category.startsWith(
+                    "lent "
+                ) ||
+                category.startsWith(
+                    "len "
+                )
+            );
+
+        }
+
+
+        /* HOLY WEEK */
+
+        if (
+            requestedCategory ===
+            "holy-week"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "holy week",
+                    "holi wik",
+                    "passion",
+                    "passion-tide",
+                    "palm sunday",
+                    "good friday",
+                    "holy thursday",
+                    "maundy"
+                ]
+            );
+
+        }
+
+
+        /* EASTER */
+
+        if (
+            requestedCategory ===
+            "easter"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "easter",
+                    "ista"
+                ]
+            );
+
+        }
+
+
+        /* ASCENSION */
+
+        if (
+            requestedCategory ===
+            "ascension"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "ascension",
+                    "ascension-tide",
+                    "asensen"
+                ]
+            );
+
+        }
+
+
+        /* PENTECOST */
+
+        if (
+            requestedCategory ===
+            "pentecost"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "pentecost",
+                    "pentekos",
+                    "whitsun",
+                    "holy ghost",
+                    "holy spirit"
+                ]
+            );
+
+        }
+
+
+        /* TRINITY */
+
+        if (
+            requestedCategory ===
+            "trinity"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "trinity",
+                    "triniti",
+                    "triune"
+                ]
+            );
+
+        }
+
+
+        /* CORPUS CHRISTI */
+
+        if (
+            requestedCategory ===
+            "corpus-christi"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "corpus christi",
+                    "blessed sacrament",
+                    "holy communion",
+                    "eucharist",
+                    "eucharistic",
+                    "holi yukaris",
+                    "benediction"
+                ]
+            );
+
+        }
+
+
+        /* SACRED HEART */
+
+        if (
+            requestedCategory ===
+            "sacred-heart"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "sacred heart",
+                    "santu hat"
+                ]
+            );
+
+        }
+
+
+        /* MARIAN */
+
+        if (
+            requestedCategory ===
+            "marian"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "blessed virgin mary",
+                    "virgin mary",
+                    "our lady",
+                    "marian",
+                    "mary",
+                    "maria",
+                    "santu maria",
+                    "rosary",
+                    "rosari",
+                    "immaculate",
+                    "assumption",
+                    "annunciation",
+                    "mother of god"
+                ]
+            );
+
+        }
+
+
+        /* SAINTS */
+
+        if (
+            requestedCategory ===
+            "saints"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "all saints",
+                    "saint ",
+                    "saints",
+                    "apostle",
+                    "apostles",
+                    "evangelist",
+                    "evangelists",
+                    "martyr",
+                    "martyrs",
+                    "confessor",
+                    "confessors",
+                    "holy women",
+                    "holy angels",
+                    "guardian angel",
+                    "ol santu"
+                ]
+            );
+
+        }
+
+
+        /* HOLY SOULS */
+
+        if (
+            requestedCategory ===
+            "holy-souls"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "holy souls",
+                    "faithful departed",
+                    "purgatory",
+                    "departed",
+                    "the dead",
+                    "for the dead",
+                    "ol daiman",
+                    "manmeri i dai"
+                ]
+            );
+
+        }
+
+
+        /* ORDINARY TIME */
+
+        if (
+            requestedCategory ===
+            "ordinary-time"
+        ) {
+
+            return containsAny(
+                category,
+                [
+                    "general hymn",
+                    "general hymns",
+                    "general",
+                    "ordinary time",
+                    "ordinary",
+                    "olgeta taim",
+                    "ol kain singsing",
+                    "general songs"
+                ]
+            );
+
+        }
+
+
+        /* OTHER */
+
+        if (
+            requestedCategory ===
+            "other"
+        ) {
+
+            const mainGroups = [
+
+                "advent",
+                "christmas",
+                "epiphany",
+                "lent",
+                "holy-week",
+                "easter",
+                "ascension",
+                "pentecost",
+                "trinity",
+                "corpus-christi",
+                "sacred-heart",
+                "marian",
+                "saints",
+                "holy-souls",
+                "ordinary-time"
+
+            ];
+
+
+            return !mainGroups.some(
+                function (group) {
+
+                    return categoryMatches(
+                        hymn,
+                        group
                     );
 
                 }
+            );
 
+        }
+
+
+        return false;
+
+    }
+
+
+    /* =========================================================
+       ESCAPE HTML
+       ========================================================= */
+
+    function escapeHTML(value) {
+
+        return String(value || "")
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+
+    /* =========================================================
+       FORMAT LYRICS
+       ========================================================= */
+
+    function formatLyrics(lyrics) {
+
+        const safeLyrics =
+            escapeHTML(
+                lyrics
+            ).trim();
+
+
+        if (!safeLyrics) {
+
+            return "";
+
+        }
+
+
+        return safeLyrics
+            .split(/\n\s*\n/)
+            .map(
+                function (verse) {
+
+                    return (
+                        "<p>" +
+                        verse
+                            .trim()
+                            .replace(
+                                /\n/g,
+                                "<br>"
+                            ) +
+                        "</p>"
+                    );
+
+                }
+            )
+            .join("");
+
+    }
+
+
+    /* =========================================================
+       IMPORTANT:
+       GO DIRECTLY TO FIRST ACTUAL HYMN
+
+       This is the part that fixes your scrolling problem.
+       ========================================================= */
+
+    function goToFirstHymn() {
+
+        setTimeout(
+            function () {
+
+                const firstHymn =
+                    document.querySelector(
+                        "#hymn-results .written-hymn"
+                    );
+
+
+                if (!firstHymn) {
+
+                    return;
+
+                }
+
+
+                const position =
+                    firstHymn
+                        .getBoundingClientRect()
+                        .top +
+                    window.scrollY -
+                    20;
+
+
+                window.scrollTo({
+
+                    top:
+                        position,
+
+                    behavior:
+                        "smooth"
+
+                });
+
+            },
+            150
+        );
+
+    }
+
+
+    /* =========================================================
+       ACTIVE LANGUAGE BUTTON
+       ========================================================= */
+
+    function updateLanguageButtons() {
+
+        document
+            .querySelectorAll(
+                ".hymn-language-button"
+            )
+            .forEach(
+                function (button) {
+
+                    const active =
+                        button.dataset.language ===
+                        selectedLanguage;
+
+
+                    button.classList.toggle(
+                        "active",
+                        active
+                    );
+
+
+                    button.setAttribute(
+                        "aria-pressed",
+                        active
+                            ? "true"
+                            : "false"
+                    );
+
+                }
+            );
+
+    }
+
+
+    /* =========================================================
+       ACTIVE CATEGORY BUTTON
+       ========================================================= */
+
+    function updateCategoryButtons() {
+
+        document
+            .querySelectorAll(
+                ".hymn-category-button"
+            )
+            .forEach(
+                function (button) {
+
+                    const active =
+                        button.dataset.category ===
+                        selectedCategory;
+
+
+                    button.classList.toggle(
+                        "active",
+                        active
+                    );
+
+
+                    button.setAttribute(
+                        "aria-pressed",
+                        active
+                            ? "true"
+                            : "false"
+                    );
+
+                }
+            );
+
+    }
+
+
+    /* =========================================================
+       LANGUAGE BUTTONS
+       ========================================================= */
+
+    document
+        .querySelectorAll(
+            ".hymn-language-button"
+        )
+        .forEach(
+            function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        selectedLanguage =
+                            button.dataset.language;
+
+
+                        selectedCategory =
+                            "all";
+
+
+                        searchInput.value =
+                            "";
+
+
+                        updateLanguageButtons();
+
+                        updateCategoryButtons();
+
+                        renderHymns();
+
+                        goToFirstHymn();
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* =========================================================
+       CATEGORY BUTTONS
+       ========================================================= */
+
+    document
+        .querySelectorAll(
+            ".hymn-category-button"
+        )
+        .forEach(
+            function (button) {
 
                 button.addEventListener(
                     "click",
                     function () {
 
                         selectedCategory =
-                            category;
+                            button.dataset.category;
 
 
-                        document
-                            .querySelectorAll(
-                                ".hymn-category-button"
-                            )
-                            .forEach(
-                                function (otherButton) {
-
-                                    otherButton
-                                        .classList
-                                        .remove(
-                                            "active"
-                                        );
-
-                                }
-                            );
-
-
-                        button.classList.add(
-                            "active"
-                        );
-
+                        updateCategoryButtons();
 
                         renderHymns();
 
+                        goToFirstHymn();
+
                     }
                 );
-
-
-                categoriesContainer
-                    .appendChild(
-                        button
-                    );
 
             }
         );
 
 
-        /* ==============================
-           FORMAT LYRICS
-           ============================== */
+    /* =========================================================
+       CURRENT COLLECTION
+       ========================================================= */
 
-        function formatLyrics(
-            lyrics
-        ) {
+    function getCurrentCollection() {
 
-            return lyrics
-                .trim()
-                .split(/\n\s*\n/)
-                .map(
-                    verse =>
-                        `<p>${
-                            verse
-                                .trim()
-                                .replace(
-                                    /\n/g,
-                                    "<br>"
-                                )
-                        }</p>`
-                )
-                .join("");
+        return (
+            hymnCollections[
+                selectedLanguage
+            ] || []
+        );
 
-        }
+    }
 
 
-        /* ==============================
-           DISPLAY HYMNS
-           ============================== */
+    /* =========================================================
+       RENDER HYMNS
+       ========================================================= */
 
-        function renderHymns() {
+    function renderHymns() {
 
-            const searchTerm =
+        const collection =
+            getCurrentCollection();
+
+
+        const searchTerm =
+            normaliseText(
                 searchInput.value
-                    .toLowerCase()
-                    .trim();
+            );
 
 
-            const filteredHymns =
-                catholicHymns.filter(
-                    function (hymn) {
+        const filteredHymns =
+            collection.filter(
+                function (hymn) {
 
-                        const matchesCategory =
-                            selectedCategory ===
-                                "All" ||
-                            hymn.category ===
-                                selectedCategory;
-
-
-                        const searchableText =
-                            (
-                                hymn.title +
-                                " " +
-                                hymn.category +
-                                " " +
-                                hymn.language +
-                                " " +
-                                hymn.lyrics
-                            )
-                            .toLowerCase();
-
-
-                        const matchesSearch =
-                            searchableText.includes(
-                                searchTerm
-                            );
-
-
-                        return (
-                            matchesCategory &&
-                            matchesSearch
-                        );
-
-                    }
-                );
-
-
-            results.innerHTML =
-                "";
-
-
-            filteredHymns.forEach(
-                function (
-                    hymn,
-                    index
-                ) {
-
-                    const details =
-                        document.createElement(
-                            "details"
+                    const matchesCategory =
+                        categoryMatches(
+                            hymn,
+                            selectedCategory
                         );
 
 
-                    details.className =
-                        "written-hymn";
-
-
-                    details.innerHTML = `
-
-                        <summary>
-
-                            <span class="hymn-number">
-                                ${index + 1}.
-                            </span>
-
-                            ${hymn.title}
-
-                        </summary>
-
-
-                        <div
-                            class="hymn-lyrics"
-                            style="
-                                font-size:
-                                ${hymnFontSize}rem;
-                            "
-                        >
-
-                            <div
-                                class="hymn-information"
-                            >
-
-                                <span
-                                    class="hymn-label"
-                                >
-                                    ${hymn.category}
-                                </span>
-
-                                <span
-                                    class="hymn-label"
-                                >
-                                    ${hymn.language}
-                                </span>
-
-                            </div>
-
-
-                            ${formatLyrics(
+                    const searchableText =
+                        normaliseText(
+                            [
+                                hymn.number,
+                                hymn.title,
+                                hymn.originalTitle,
+                                hymn.category,
+                                hymn.language,
                                 hymn.lyrics
-                            )}
+                            ]
+                                .filter(Boolean)
+                                .join(" ")
+                        );
 
-                        </div>
 
-                    `;
+                    const matchesSearch =
+                        searchTerm === "" ||
+                        searchableText.includes(
+                            searchTerm
+                        );
 
 
-                    results.appendChild(
-                        details
+                    return (
+                        matchesCategory &&
+                        matchesSearch
                     );
 
                 }
             );
 
+
+        results.innerHTML =
+            "";
+
+
+        filteredHymns.forEach(
+            function (hymn) {
+
+                const details =
+                    document.createElement(
+                        "details"
+                    );
+
+
+                details.className =
+                    "written-hymn";
+
+
+                const hymnNumber =
+                    hymn.number !== undefined
+                        ? hymn.number
+                        : "";
+
+
+                const hymnTitle =
+                    escapeHTML(
+                        hymn.title ||
+                        "Untitled Hymn"
+                    );
+
+
+                const hymnCategory =
+                    escapeHTML(
+                        hymn.category ||
+                        "Hymn"
+                    );
+
+
+                const hymnLanguage =
+                    escapeHTML(
+                        hymn.language ||
+                        selectedLanguage
+                    );
+
+
+                const originalTitle =
+                    hymn.originalTitle
+                        ? escapeHTML(
+                            hymn.originalTitle
+                        )
+                        : "";
+
+
+                let informationHTML = `
+
+                    <span class="hymn-label">
+                        ${hymnCategory}
+                    </span>
+
+                    <span class="hymn-label">
+                        ${hymnLanguage}
+                    </span>
+
+                `;
+
+
+                if (
+                    originalTitle &&
+                    normaliseText(
+                        originalTitle
+                    ) !==
+                    normaliseText(
+                        hymn.title
+                    )
+                ) {
+
+                    informationHTML += `
+
+                        <span class="hymn-label">
+                            ${originalTitle}
+                        </span>
+
+                    `;
+
+                }
+
+
+                details.innerHTML = `
+
+                    <summary>
+
+                        <span class="hymn-number">
+
+                            ${
+                                hymnNumber
+                                    ? hymnNumber + "."
+                                    : ""
+                            }
+
+                        </span>
+
+                        ${hymnTitle}
+
+                    </summary>
+
+
+                    <div
+                        class="hymn-lyrics"
+                        style="
+                            font-size:
+                            ${hymnFontSize}rem;
+                        "
+                    >
+
+                        <div
+                            class="hymn-information"
+                        >
+
+                            ${informationHTML}
+
+                        </div>
+
+
+                        ${
+                            formatLyrics(
+                                hymn.lyrics
+                            )
+                        }
+
+                    </div>
+
+                `;
+
+
+                results.appendChild(
+                    details
+                );
+
+            }
+        );
+
+
+        if (noHymns) {
 
             noHymns.hidden =
                 filteredHymns.length !== 0;
@@ -306,19 +1049,94 @@ document.addEventListener(
         }
 
 
-        /* ==============================
-           SEARCH
-           ============================== */
-
-        searchInput.addEventListener(
-            "input",
-            renderHymns
+        updateStatus(
+            filteredHymns.length,
+            collection.length,
+            searchTerm
         );
 
+    }
 
-        /* ==============================
-           LARGER TEXT
-           ============================== */
+
+    /* =========================================================
+       STATUS
+       ========================================================= */
+
+    function updateStatus(
+        visibleCount,
+        totalCount,
+        searchTerm
+    ) {
+
+        if (!statusBox) {
+
+            return;
+
+        }
+
+
+        const categoryName =
+            categoryLabels[
+                selectedCategory
+            ] ||
+            "All Hymns";
+
+
+        let count =
+            visibleCount;
+
+
+        if (
+            selectedCategory === "all" &&
+            !searchTerm
+        ) {
+
+            count =
+                totalCount;
+
+        }
+
+
+        statusBox.innerHTML = `
+
+            <strong>
+                ${escapeHTML(selectedLanguage)}
+            </strong>
+
+            —
+
+            ${escapeHTML(categoryName)}
+
+            —
+
+            ${count}
+
+            ${
+                count === 1
+                    ? "hymn"
+                    : "hymns"
+            }
+
+        `;
+
+    }
+
+
+    /* =========================================================
+       SEARCH
+       ========================================================= */
+
+    searchInput.addEventListener(
+        "input",
+        renderHymns
+    );
+
+
+    /* =========================================================
+       LARGER TEXT
+       ========================================================= */
+
+    if (largerButton) {
 
         largerButton.addEventListener(
             "click",
@@ -331,15 +1149,34 @@ document.addEventListener(
                     );
 
 
-                renderHymns();
+                document
+                    .querySelectorAll(
+                        ".hymn-lyrics"
+                    )
+                    .forEach(
+                        function (lyrics) {
+
+                            lyrics.style.fontSize =
+                                hymnFontSize +
+                                "rem";
+
+                        }
+                    );
+
+
+                goToFirstHymn();
 
             }
         );
 
+    }
 
-        /* ==============================
-           SMALLER TEXT
-           ============================== */
+
+    /* =========================================================
+       SMALLER TEXT
+       ========================================================= */
+
+    if (smallerButton) {
 
         smallerButton.addEventListener(
             "click",
@@ -352,15 +1189,34 @@ document.addEventListener(
                     );
 
 
-                renderHymns();
+                document
+                    .querySelectorAll(
+                        ".hymn-lyrics"
+                    )
+                    .forEach(
+                        function (lyrics) {
+
+                            lyrics.style.fontSize =
+                                hymnFontSize +
+                                "rem";
+
+                        }
+                    );
+
+
+                goToFirstHymn();
 
             }
         );
 
+    }
 
-        /* ==============================
-           OPEN ALL
-           ============================== */
+
+    /* =========================================================
+       OPEN ALL
+       ========================================================= */
+
+    if (openAllButton) {
 
         openAllButton.addEventListener(
             "click",
@@ -379,13 +1235,20 @@ document.addEventListener(
                         }
                     );
 
+
+                goToFirstHymn();
+
             }
         );
 
+    }
 
-        /* ==============================
-           CLOSE ALL
-           ============================== */
+
+    /* =========================================================
+       CLOSE ALL
+       ========================================================= */
+
+    if (closeAllButton) {
 
         closeAllButton.addEventListener(
             "click",
@@ -404,13 +1267,20 @@ document.addEventListener(
                         }
                     );
 
+
+                goToFirstHymn();
+
             }
         );
 
+    }
 
-        /* ==============================
-           PRINT
-           ============================== */
+
+    /* =========================================================
+       PRINT
+       ========================================================= */
+
+    if (printButton) {
 
         printButton.addEventListener(
             "click",
@@ -436,18 +1306,23 @@ document.addEventListener(
                         window.print();
 
                     },
-                    100
+                    200
                 );
 
             }
         );
 
-
-        /* ==============================
-           INITIAL DISPLAY
-           ============================== */
-
-        renderHymns();
-
     }
-);
+
+
+    /* =========================================================
+       INITIAL DISPLAY
+       ========================================================= */
+
+    updateLanguageButtons();
+
+    updateCategoryButtons();
+
+    renderHymns();
+
+});
